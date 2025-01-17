@@ -2,11 +2,15 @@
 
 **Glitzo** is a sleek, responsive, and modern e-commerce website built with **HTML**, **CSS**, and **JavaScript**. It provides a seamless online shopping experience that adapts beautifully to any screen size and includes essential features like product showcasing, shopping cart functionality, and interactive animations. Designed with user experience in mind, **Glitzo** offers easy navigation, dynamic product displays, and smooth interactions for all visitors.
 
+---
+
 ## Live Demo
 
 You can explore a live demo of Glitzo - E-commerce Website here:
 
 **[Live Demo Link](#)**
+
+---
 
 ## Features
 
@@ -23,6 +27,8 @@ You can explore a live demo of Glitzo - E-commerce Website here:
 - **Lazy Loading**: Efficient loading of images for faster page performance.
 
 - **Smooth Animations**: Hover effects, button transitions, and sliding effects for smooth user interactions.
+
+---
 
 ## Table of Contents
 
@@ -51,6 +57,8 @@ You can explore a live demo of Glitzo - E-commerce Website here:
 12. [Screenshots](#screenshots)
 
 13. [Contact](#contact)
+
+---
 
 ## Installation
 
@@ -81,7 +89,9 @@ To set up **Glitzo** locally:
 
 4. Navigate to the provided local URL in your browser.
 
-# Usage
+---
+
+## Usage
 
 After setting up the website locally, you can start interacting with the features:
 
@@ -109,6 +119,8 @@ After setting up the website locally, you can start interacting with the feature
 
 - **Styling**: Modify the CSS files to adjust colors, fonts, layout grids, and other visual aspects.
 
+---
+
 ## File Structure
 
 The project follows a standard structure with separate folders for HTML, CSS, and JavaScript files.
@@ -130,7 +142,9 @@ glitzo/
 └── README.md                # Project documentation (this file)
 ```
 
-# Tech Stack
+---
+
+## Tech Stack
 
 - **HTML5**: Markup language used for the content structure and semantic elements like `<header>`, `<footer>`, `<nav>`, etc.
 
@@ -143,6 +157,8 @@ glitzo/
 - **Lazy Loading**: Techniques for loading images and assets only when they enter the viewport, improving performance.
 
 - **Media Queries**: Ensures the layout adapts to various screen sizes (desktop, tablet, and mobile).
+
+---
 
 ## Media Queries & Responsiveness
 
@@ -193,6 +209,8 @@ The website uses media queries to ensure it is responsive across all devices. He
 }
 ```
 
+---
+
 ## Features & Components
 
 ### 1. Header
@@ -217,23 +235,17 @@ The website uses media queries to ensure it is responsive across all devices. He
 
 - **Filters** are dynamic, and as you select options, the product list updates in real-time.
 
-### 4. Shopping Cart
-
-- **Add/Remove Functionality**: Users can add items to the cart, modify quantities, or remove products.
-
-- **The cart** is persistent within the session, and the total price is automatically updated as items are added or removed.
-
-- **Toast Notifications**: Instant feedback is shown to the user after interacting with the cart (e.g., "Product added to cart").
-
-### 5. Footer
+### 4. Footer
 
 - **Contains links** to important pages such as Privacy Policy, Terms & Conditions, and Contact Us.
 
 - **Also includes** social media icons for Facebook, Instagram, Twitter, and more.
 
-### 6. Modal Windows
+### 5. Modal Windows
 
 - Product details and cart management use modal windows for a seamless user experience without navigating away from the current page.
+
+---
 
 ## How to Test
 
@@ -244,6 +256,8 @@ The website uses media queries to ensure it is responsive across all devices. He
 - **Responsiveness Testing**: Use Chrome DevTools to simulate various screen sizes and test responsiveness across mobile, tablet, and desktop.
 
 - **Performance Testing**: Run performance audits using tools like Google Lighthouse to evaluate page load speed, accessibility, SEO, and best practices.
+
+---
 
 ## Browser Compatibility
 
@@ -257,11 +271,15 @@ Glitzo is optimized for modern browsers:
 
 - **Microsoft Edge**
 
+---
+
 ## Known Issues
 
 - Some older browsers (e.g., Internet Explorer) may not fully support CSS Grid or Flexbox layouts.
 
 - Certain interactive elements might not function correctly on very old mobile devices.
+
+---
 
 ## Roadmap
 
@@ -275,7 +293,9 @@ The following features are planned for future updates:
 
 - **Admin Panel**: Admin dashboard for managing products and orders.
 
-# Contributing
+---
+
+## Contributing
 
 We welcome contributions to Glitzo! To contribute, follow these steps:
 
@@ -303,6 +323,8 @@ We welcome contributions to Glitzo! To contribute, follow these steps:
 
 Please ensure your changes adhere to the existing code style and include relevant documentation.
 
+---
+
 ## Screenshots
 
 Here are some screenshots of Glitzo - E-commerce Website:
@@ -313,6 +335,8 @@ Here are some screenshots of Glitzo - E-commerce Website:
 
 - **Shopping Cart**
 
+---
+
 ## Contact
 
 For any questions or inquiries, feel free to reach out to us:
@@ -322,5 +346,7 @@ For any questions or inquiries, feel free to reach out to us:
 - **GitHub**: [@sudhanshu-Jha](https://github.com/sudhanshu-j)
 
 - **LinkedIn**: [Sudhanshu Jha](https://www.linkedin.com/in/sudhanshu-shekhar-jha-799174285/)
+
+---
 
 **Thank you for exploring Glitzo - E-commerce Website! We hope you enjoy using and contributing to this project. If you have any questions or suggestions, feel free to open an issue or submit a pull request.**
