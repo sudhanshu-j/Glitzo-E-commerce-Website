@@ -8,7 +8,7 @@
 
 You can explore a live demo of Glitzo - E-commerce Website here:
 
-**[Live Demo Link](#)**
+**[Live Demo Link](https://glitzo.netlify.app/)**
 
 ---
 
