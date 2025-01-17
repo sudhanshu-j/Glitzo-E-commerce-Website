@@ -1,0 +1,3866 @@
+/* Import the Poppins font from Google Fonts with various weights and italics variations */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* -------------------------CUSTOM PROPERTY------------------------- */
+
+:root {
+  /* Define color variables */
+  --spanish-gray: #999999; /* Light gray */
+  --sonic-silver: #787878; /* Darker gray */
+  --eerie-black: #212121; /* Almost black */
+  --salmon-pink: #ff8f9c; /* Soft pink */
+  --sandy-brown: #f6a355; /* Warm brown */
+  --bittersweet: #ff6666; /* Bright red-orange */
+  --ocean-green: #46c389; /* Ocean-like green */
+  --davys-gray: #545454; /* Medium dark gray */
+  --cultured: #ededed; /* Very light gray */
+  --white: #fbf5f3; /* Pure white */
+  --onyx: #454545; /* Dark gray, almost black */
+
+  /* Define typography (font size and weight) */
+  --fs-1: 1.563rem; /* Font size 1 */
+  --fs-2: 1.375rem; /* Font size 2 */
+  --fs-3: 1.25rem; /* Font size 3 */
+  --fs-4: 1.125rem; /* Font size 4 */
+  --fs-5: 1rem; /* Font size 5 */
+  --fs-6: 0.938rem; /* Font size 6 */
+  --fs-7: 0.875rem; /* Font size 7 */
+  --fs-8: 0.813rem; /* Font size 8 */
+  --fs-9: 0.75rem; /* Font size 9 */
+  --fs-10: 0.688rem; /* Font size 10 */
+  --fs-11: 0.625rem; /* Font size 11 */
+
+  --weight-300: 300; /* Font weight light */
+  --weight-400: 400; /* Font weight normal */
+  --weight-500: 500; /* Font weight medium */
+  --weight-600: 600; /* Font weight semi-bold */
+  --weight-700: 700; /* Font weight bold */
+
+  /* Define border radius */
+  --border-radius-md: 10px; /* Medium border radius */
+  --border-radius-sm: 5px; /* Small border radius */
+
+  /* Define transition timing */
+  --transition-timing: 0.2s ease; /* Transition effect */
+}
+
+/* -------------------------RESET STYLING------------------------- */
+
+*,
+*::before,
+*::after {
+  margin: 0; /* Reset margin */
+  padding: 0; /* Reset padding */
+  -webkit-box-sizing: border-box; /* Set box-sizing for Webkit browsers */
+  box-sizing: border-box; /* Set box-sizing */
+}
+
+a {
+  text-decoration: none; /* Remove underlines from links */
+}
+
+li {
+  list-style: none; /* Remove bullet points from list items */
+}
+
+button {
+  background: none; /* Remove background from button */
+  font: inherit; /* Inherit font style */
+  border: none; /* Remove border */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+img,
+ion-icon,
+button,
+a {
+  display: block; /* Set these elements to block display */
+}
+
+span {
+  display: inline-block; /* Set span to inline-block */
+}
+
+html {
+  font-family: "Poppins", serif; /* Set font family */
+  -ms-scroll-chaining: none; /* Disable scroll chaining in IE */
+  overscroll-behavior: contain; /* Prevent scroll from bouncing */
+}
+
+input {
+  display: block; /* Set input to block display */
+  width: 100%; /* Make input take full width */
+  font: inherit; /* Inherit font style */
+}
+
+input::-webkit-input-placeholder {
+  font: inherit; /* Inherit font style for placeholders in Webkit browsers */
+}
+
+input::-moz-placeholder {
+  font: inherit; /* Inherit font style for Firefox placeholders */
+}
+
+input:-ms-input-placeholder {
+  font: inherit; /* Inherit font style for MS placeholders */
+}
+
+input::-ms-input-placeholder {
+  font: inherit; /* Inherit font style for MS placeholders */
+}
+
+input::placeholder {
+  font: inherit; /* Inherit font style for placeholder */
+}
+
+body {
+  background: var(--white); /* Set body background to white */
+}
+
+/* -------------------------SCROLLBAR STYLE------------------------- */
+
+body::-webkit-scrollbar {
+  width: 15px; /* Set width of scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--white); /* Set scrollbar track background */
+  border-left: 1px solid var(--cultured); /* Add left border to scrollbar track */
+}
+
+body::-webkit-scrollbar-thumb {
+  background: hsl(0, 0%, 80%); /* Set color of scrollbar thumb */
+  border: 3px solid var(--white); /* Add border to scrollbar thumb */
+  -webkit-border-radius: 10px; /* Round edges of scrollbar thumb */
+  border-radius: 10px; /* Round edges of scrollbar thumb */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: hsl(0, 0%, 70%); /* Change color on hover */
+}
+
+/* -------------------------REUSED STYLING------------------------- */
+
+.container {
+  padding: 0 15px; /* Add horizontal padding */
+}
+
+.has-scrollbar {
+  padding-bottom: 5px; /* Add bottom padding for scrollbar */
+}
+
+.has-scrollbar::-webkit-scrollbar {
+  width: 12px; /* Set width of vertical scrollbar */
+  height: 12px; /* Set height of horizontal scrollbar */
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent; /* Set scrollbar thumb to transparent */
+  border: 3px solid var(--white); /* Add border to scrollbar thumb */
+  -webkit-border-radius: 20px; /* Round edges of scrollbar thumb */
+  border-radius: 20px; /* Round edges of scrollbar thumb */
+}
+
+.has-scrollbar:hover::-webkit-scrollbar-thumb {
+  background: hsl(0, 0%, 90%); /* Change color of thumb on hover */
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: hsl(0, 0%, 80%); /* Change color of thumb on hover */
+}
+
+.title {
+  color: var(--eerie-black); /* Set title text color */
+  font-size: var(--fs-5); /* Set font size for title */
+  font-weight: var(--weight-600); /* Set font weight for title */
+  letter-spacing: 0.4px; /* Add letter spacing */
+  text-transform: capitalize; /* Capitalize text */
+  padding-bottom: 10px; /* Add padding below title */
+  border-bottom: 1px solid var(--cultured); /* Add border below title */
+  margin-bottom: 30px; /* Add margin below title */
+}
+
+/* -------------------------MAIN CONTAINER------------------------- */
+
+/* ----------OVERLAY STYLING---------- */
+
+.overlay {
+  position: fixed; /* Fix position of overlay */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full width */
+  height: 100vh; /* Full viewport height */
+  background: hsla(0, 0%, 0%, 0.5); /* Semi-transparent black background */
+  opacity: 0; /* Initial opacity 0 */
+  pointer-events: none; /* Disable pointer events initially */
+  z-index: 15; /* Set z-index to 15 */
+  -webkit-transition: 0.5s ease; /* Smooth transition for Webkit browsers */
+  -o-transition: 0.5s ease; /* Smooth transition for Opera */
+  transition: 0.5s ease; /* Smooth transition */
+}
+
+.overlay.active {
+  opacity: 1; /* Full opacity when active */
+  pointer-events: all; /* Enable pointer events when active */
+}
+
+/* ----------MODAL STYLING---------- */
+
+.modal {
+  position: fixed; /* Fix position of modal */
+  top: 0; /* Align to top */
+  left: 0; /* Align to left */
+  width: 100%; /* Full width */
+  height: 100vh; /* Full viewport height */
+  background: #00000080; /* Semi-transparent black background */
+  display: -webkit-box; /* Flexbox for Webkit browsers */
+  display: -webkit-flex; /* Flexbox for Webkit browsers */
+  display: -ms-flexbox; /* Flexbox for IE */
+  display: flex; /* Flexbox */
+  -webkit-box-pack: center; /* Center content horizontally */
+  -webkit-justify-content: center; /* Center content horizontally */
+  -ms-flex-pack: center; /* Center content horizontally for IE */
+  justify-content: center; /* Center content horizontally */
+  -webkit-box-align: center; /* Center content vertically */
+  -webkit-align-items: center; /* Center content vertically */
+  -ms-flex-align: center; /* Center content vertically for IE */
+  align-items: center; /* Center content vertically */
+  opacity: 0; /* Initial opacity 0 */
+  visibility: hidden; /* Initial visibility hidden */
+  pointer-events: none; /* Disable pointer events initially */
+  z-index: 10; /* Set z-index to 10 */
+  -webkit-animation: popup 1s ease-in-out 5s forwards; /* Apply animation for Webkit browsers */
+  animation: popup 1s ease-in-out 5s forwards; /* Apply animation */
+}
+
+@-webkit-keyframes popup {
+  0% {
+    opacity: 0; /* Start with 0 opacity */
+    visibility: hidden; /* Start as hidden */
+    pointer-events: none; /* Disable pointer events */
+  }
+
+  100% {
+    opacity: 1; /* End with full opacity */
+    visibility: visible; /* Set visibility to visible */
+    pointer-events: all; /* Enable pointer events */
+  }
+}
+
+@keyframes popup {
+  0% {
+    opacity: 0; /* Start with 0 opacity */
+    visibility: hidden; /* Start as hidden */
+    pointer-events: none; /* Disable pointer events */
+  }
+
+  100% {
+    opacity: 1; /* End with full opacity */
+    visibility: visible; /* Set visibility to visible */
+    pointer-events: all; /* Enable pointer events */
+  }
+}
+
+.modal.closed {
+  display: none; /* Hide modal when closed */
+}
+
+.modal-close-overlay {
+  position: absolute; /* Position overlay over modal */
+  top: 0; /* Align to top */
+  left: 0; /* Align to left */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  z-index: 1; /* Set z-index to 1 */
+}
+
+.newsletter-img {
+  display: none; /* Hide newsletter image */
+}
+
+.modal-content {
+  position: relative; /* Set relative positioning */
+  max-width: 350px; /* Set max-width */
+  margin: 20px; /* Add margin around modal content */
+  background: var(--white); /* Set background to white */
+  -webkit-border-radius: var(
+    --border-radius-md
+  ); /* Rounded corners for Webkit browsers */
+  border-radius: var(--border-radius-md); /* Rounded corners */
+  overflow: hidden; /* Hide overflowing content */
+  z-index: 2; /* Set z-index to 2 */
+  -webkit-animation: scaleUp 0.5s ease-in-out 5s forwards; /* Apply scale-up animation for Webkit browsers */
+  animation: scaleUp 0.5s ease-in-out 5s forwards; /* Apply scale-up animation */
+}
+
+/* ----------WEBKIT KEYFRAMES FOR SCALE ANIMATION---------- */
+
+@-webkit-keyframes scaleUp {
+  /* Animation for scaling up elements in WebKit browsers */
+  0% {
+    /* Initial scale at 90% */
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  100% {
+    /* Final scale at 100% (normal size) */
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleUp {
+  /* Animation for scaling up elements */
+  0% {
+    /* Initial scale at 90% */
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  100% {
+    /* Final scale at 100% (normal size) */
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+/* ----------MODAL CLOSE BUTTON---------- */
+
+.modal-close-btn {
+  /* Styling for the close button in the modal */
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--salmon-pink); /* Background color */
+  color: var(--white); /* Text color */
+  font-size: 16px;
+  padding: 5px;
+  -webkit-border-radius: var(--border-radius-sm); /* Rounded corners (WebKit) */
+  border-radius: var(--border-radius-sm); /* Rounded corners */
+}
+
+.modal-close-btn:hover {
+  /* Hover effect for the close button */
+  opacity: 0.9;
+}
+
+.modal-close-btn ion-icon {
+  /* Icon styling inside the close button */
+  --ionicon-stroke-width: 70px; /* Icon stroke width */
+}
+
+/* ----------NEWSLETTER SECTION---------- */
+
+.newsletter {
+  /* Styling for the newsletter container */
+  padding: 50px 30px;
+  text-align: center;
+}
+
+.newsletter-header {
+  /* Styling for the header section inside the newsletter */
+  margin-bottom: 20px;
+}
+
+.newsletter-title {
+  /* Styling for the title of the newsletter */
+  color: var(--onyx); /* Text color */
+  font-size: var(--fs-2); /* Font size */
+  font-weight: var(--weight-600); /* Font weight */
+  margin-bottom: 10px;
+}
+
+.newsletter-desc {
+  /* Styling for the description inside the newsletter */
+  color: var(--sonic-silver); /* Text color */
+  font-size: var(--fs-7); /* Font size */
+  line-height: 1.6; /* Line height for better readability */
+}
+
+.email-field {
+  /* Styling for the email input field */
+  font-size: var(--fs-7); /* Font size */
+  padding: 8px 16px; /* Padding inside the input */
+  -webkit-border-radius: var(--border-radius-sm); /* Rounded corners (WebKit) */
+  border-radius: var(--border-radius-sm); /* Rounded corners */
+  border: 1px solid var(--cultured); /* Border color */
+  margin-bottom: 16px; /* Bottom margin */
+}
+
+.btn-newsletter {
+  /* Styling for the newsletter button */
+  background: var(--eerie-black); /* Background color */
+  color: var(--white); /* Text color */
+  font-size: var(--fs-7); /* Font size */
+  font-weight: var(--weight-600); /* Font weight */
+  text-transform: uppercase; /* Uppercase text */
+  padding: 10px 15px; /* Padding inside the button */
+  -webkit-border-radius: var(--border-radius-sm); /* Rounded corners (WebKit) */
+  border-radius: var(--border-radius-sm); /* Rounded corners */
+  margin: auto; /* Center the button horizontally */
+  -webkit-transition: var(--transition-timing); /* Smooth transition (WebKit) */
+  -o-transition: var(--transition-timing); /* Smooth transition (for Opera) */
+  transition: var(--transition-timing); /* Smooth transition */
+}
+
+.btn-newsletter:hover {
+  /* Hover effect for the newsletter button */
+  background: var(--salmon-pink); /* Change background color */
+}
+
+/* ----------NOTIFICATION TOAST---------- */
+
+.notification-toast {
+  /* Styling for the notification toast */
+  position: fixed; /* Fix position to the screen */
+  bottom: 80px; /* Distance from the bottom */
+  left: 20px; /* Distance from the left */
+  right: 20px; /* Distance from the right */
+  background: var(--white); /* Background color */
+  max-width: 300px; /* Max width of the toast */
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; /* Flexbox for layout */
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start; /* Align items to the start */
+  gap: 15px; /* Gap between items */
+  padding: 15px; /* Padding inside the toast */
+  -webkit-border-radius: var(--border-radius-md); /* Rounded corners (WebKit) */
+  border-radius: var(--border-radius-md); /* Rounded corners */
+  -webkit-box-shadow: 0 5px 20px hsla(0, 0%, 0%, 0.15); /* Shadow effect (WebKit) */
+  box-shadow: 0 5px 20px hsla(0, 0%, 0%, 0.15); /* Shadow effect */
+  -webkit-transform: translateX(
+    -webkit-calc(-100% - 40px)
+  ); /* Off-screen position (WebKit) */
+  -ms-transform: translateX(calc(-100% - 40px)); /* Off-screen position (IE) */
+  transform: translateX(calc(-100% - 40px)); /* Off-screen position */
+  -webkit-transition: 0.5s ease-in-out; /* Smooth transition (WebKit) */
+  -o-transition: 0.5s ease-in-out; /* Smooth transition (Opera) */
+  transition: 0.5s ease-in-out; /* Smooth transition */
+  z-index: 5; /* Stack order */
+  -webkit-animation: slideInOut 10s ease-in-out infinite; /* Slide-in animation (WebKit) */
+  animation: slideInOut 10s ease-in-out infinite; /* Slide-in animation */
+}
+
+@-webkit-keyframes slideInOut {
+  /* Keyframes for the slide-in-out animation (WebKit) */
+  0%,
+  45%,
+  100% {
+    /* Initial, middle, and final states */
+    -webkit-transform: translateX(-webkit-calc(-100% - 40px));
+    transform: translateX(calc(-100% - 40px));
+    opacity: 0; /* Invisible */
+    visibility: hidden; /* Hidden */
+  }
+
+  50%,
+  95% {
+    /* When visible */
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1; /* Fully visible */
+    visibility: visible; /* Visible */
+  }
+}
+
+@keyframes slideInOut {
+  /* Keyframes for the slide-in-out animation */
+  0%,
+  45%,
+  100% {
+    /* Initial, middle, and final states */
+    -webkit-transform: translateX(-webkit-calc(-100% - 40px));
+    transform: translateX(calc(-100% - 40px));
+    opacity: 0; /* Invisible */
+    visibility: hidden; /* Hidden */
+  }
+
+  50%,
+  95% {
+    /* When visible */
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1; /* Fully visible */
+    visibility: visible; /* Visible */
+  }
+}
+
+.notification-toast.closed {
+  /* Class for hiding the toast */
+  display: none;
+}
+
+.toast-close-btn {
+  /* Styling for the close button inside the toast */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: var(--sonic-silver); /* Text color */
+}
+
+.toast-close-btn ion-icon {
+  /* Icon styling for the toast close button */
+  --ionicon-stroke-width: 50px; /* Icon stroke width */
+}
+
+.toast-banner {
+  /* Styling for the banner image inside the toast */
+  width: 70px;
+  height: 70px;
+  border: 1px solid var(--cultured); /* Border color */
+  -webkit-border-radius: var(--border-radius-sm); /* Rounded corners (WebKit) */
+  border-radius: var(--border-radius-sm); /* Rounded corners */
+}
+
+.toast-banner img {
+  /* Styling for the image inside the toast banner */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  -o-object-fit: contain; /* Preserve aspect ratio */
+  object-fit: contain; /* Preserve aspect ratio */
+  -o-object-position: center; /* Center image */
+  object-position: center; /* Center image */
+}
+
+.toast-detail {
+  /* Styling for the details section of the toast */
+  width: -webkit-calc(100% - 85px); /* Width for WebKit browsers */
+  width: calc(100% - 85px); /* Width for other browsers */
+  padding-right: 10px; /* Padding on the right */
+}
+
+.toast-message {
+  /* Styling for the message text in the toast */
+  font-size: var(--fs-10); /* Font size */
+  color: var(--sonic-silver); /* Text color */
+  margin-bottom: 8px; /* Bottom margin */
+}
+
+.toast-title {
+  /* Styling for the title inside the toast */
+  font-size: var(--fs-7); /* Font size */
+  font-weight: var(--weight-500); /* Font weight */
+  color: var(--onyx); /* Text color */
+}
+
+.toast-meta {
+  /* Styling for meta information inside the toast */
+  font-size: var(--fs-10); /* Font size */
+  color: var(--sonic-silver); /* Text color */
+}
+
+/* ----------------------------HEADER SECTION---------------------------- */
+
+.header-top,
+.header-user-actions,
+.desktop-navigation-menu {
+  /* Hide top header elements */
+  display: none;
+}
+
+.header-main {
+  /* Styling for the main header */
+  padding: 20px 0; /* Padding */
+  border-bottom: 1px solid var(--cultured); /* Border bottom */
+}
+
+.header-logo {
+  /* Styling for the logo container */
+  margin-bottom: 20px; /* Bottom margin */
+}
+
+.header-logo img {
+  /* Styling for the logo image */
+  margin: auto; /* Center the image */
+}
+
+.header-search-container {
+  /* Positioning for the search container */
+  position: relative;
+}
+
+.header-search-container .search-field {
+  /* Styling for the search input field */
+  font-size: var(--fs-7); /* Font size */
+  color: var(--onyx); /* Text color */
+  padding: 10px 15px; /* Padding */
+  padding-right: 50px; /* Space for the search button */
+  border: 1px solid var(--cultured); /* Border color */
+  -webkit-border-radius: var(--border-radius-md); /* Rounded corners (WebKit) */
+  border-radius: var(--border-radius-md); /* Rounded corners */
+}
+
+.search-field::-webkit-search-cancel-button {
+  /* Hide the cancel button inside search field */
+  display: none;
+}
+
+.search-btn {
+  /* Styling for the search button */
+  background: var(--white); /* Background color */
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  -webkit-transform: translateY(-50%); /* Center vertically (WebKit) */
+  -ms-transform: translateY(-50%); /* Center vertically (IE) */
+  transform: translateY(-50%); /* Center vertically */
+  color: var(--onyx); /* Text color */
+  font-size: 18px; /* Font size */
+  padding: 8px 15px; /* Padding */
+  -webkit-border-radius: var(--border-radius-md); /* Rounded corners (WebKit) */
+  border-radius: var(--border-radius-md); /* Rounded corners */
+  -webkit-transition: color var(--transition-timing); /* Smooth color transition (WebKit) */
+  -o-transition: color var(--transition-timing); /* Smooth transition (Opera) */
+  transition: color var(--transition-timing); /* Smooth transition */
+}
+
+.search-btn:hover {
+  /* Hover effect for the search button */
+  color: var(--salmon-pink); /* Change color */
+}
+
+.mobile-bottom-navigation {
+  /* Styling for the mobile bottom navigation */
+  background: var(--white); /* Background color */
+  position: fixed; /* Fixed at the bottom */
+  bottom: 0; /* At the bottom */
+  left: 50%; /* Center horizontally */
+  -webkit-transform: translateX(-50%); /* Center horizontally (WebKit) */
+  -ms-transform: translateX(-50%); /* Center horizontally (IE) */
+  transform: translateX(-50%); /* Center horizontally */
+  width: 100%; /* Full width */
+  max-width: 500px; /* Max width */
+  margin: auto; /* Center it */
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; /* Flexbox for layout */
+  -webkit-justify-content: space-around; /* Distribute space evenly */
+  -ms-flex-pack: distribute; /* Distribute space evenly (IE) */
+  justify-content: space-around; /* Distribute space evenly */
+  -webkit-box-align: center; /* Align items to center */
+  -webkit-align-items: center; /* Align items to center (WebKit) */
+  -ms-flex-align: center; /* Align items to center (IE) */
+  align-items: center; /* Align items to center */
+  padding: 5px 0; /* Padding */
+  -webkit-box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.25); /* Shadow effect (WebKit) */
+  box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.25); /* Shadow effect */
+  z-index: 5; /* Stack order */
+}
+
+/* Style for mobile bottom navigation action buttons */
+.mobile-bottom-navigation .action-btn {
+  position: relative; /* Position relative for the action button */
+  font-size: 26px; /* Font size for the action button */
+  color: var(--eerie-black); /* Text color for the button */
+  padding: 10px; /* Padding around the button */
+}
+
+/* Style for count notification displayed on action button */
+.mobile-bottom-navigation .count {
+  background: var(--bittersweet); /* Background color for count badge */
+  color: var(--white); /* Text color of the count badge */
+  position: absolute; /* Position badge absolutely */
+  top: 0; /* Position at the top of the button */
+  right: 0; /* Position at the right of the button */
+  font-size: 12px; /* Font size of the count text */
+  font-weight: var(--weight-500); /* Font weight of the count text */
+  line-height: 1; /* Line height for the count text */
+  padding: 2px 4px; /* Padding around the count text */
+  -webkit-border-radius: 20px; /* Rounded corners for the badge (webkit) */
+  border-radius: 20px; /* Rounded corners for the badge */
+}
+
+/* Mobile navigation menu container style */
+.mobile-navigation-menu {
+  background: var(--white); /* White background for the menu */
+  position: fixed; /* Fix menu in place */
+  top: 0; /* Align to top */
+  left: -100%; /* Initially hide the menu off-screen */
+  width: 100%; /* Full width for the menu */
+  max-width: 320px; /* Max width for the menu */
+  height: 100vh; /* Full viewport height */
+  padding: 20px; /* Padding inside the menu */
+  -webkit-box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1); /* Light shadow (webkit) */
+  box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1); /* Light shadow */
+  overflow-y: scroll; /* Enable vertical scrolling */
+  -ms-scroll-chaining: none; /* Disable scroll chaining (IE) */
+  overscroll-behavior: contain; /* Contain overscroll behavior */
+  visibility: hidden; /* Hide menu by default */
+  -webkit-transition: 0.5s ease; /* Smooth transition for showing menu */
+  -o-transition: 0.5s ease; /* Smooth transition for showing menu */
+  transition: 0.5s ease; /* Smooth transition for showing menu */
+  z-index: 20; /* Place on top of other elements */
+}
+
+/* Active state of mobile navigation menu */
+.mobile-navigation-menu.active {
+  left: 0; /* Slide the menu into view */
+  visibility: visible; /* Make menu visible */
+}
+
+/* Style for the top section of the mobile menu */
+.menu-top {
+  padding-bottom: 15px; /* Padding at the bottom */
+  margin-bottom: 10px; /* Margin below the section */
+  display: -webkit-box; /* Flexbox layout (webkit) */
+  display: -webkit-flex; /* Flexbox layout */
+  display: -ms-flexbox; /* Flexbox layout (IE) */
+  display: flex; /* Flexbox layout */
+  -webkit-box-pack: justify; /* Justify content */
+  -webkit-justify-content: space-between; /* Distribute space between items */
+  -ms-flex-pack: justify; /* Justify content (IE) */
+  justify-content: space-between; /* Distribute space between items */
+  -webkit-box-align: center; /* Align items to the center (webkit) */
+  -webkit-align-items: center; /* Align items to the center */
+  -ms-flex-align: center; /* Align items to the center (IE) */
+  align-items: center; /* Align items to the center */
+  border-bottom: 2px solid var(--cultured); /* Bottom border */
+}
+
+/* Title in the mobile menu's top section */
+.menu-top .menu-title {
+  color: var(--salmon-pink); /* Salmon pink color */
+  font-size: var(--fs-4); /* Font size for the title */
+  font-weight: var(--weight-600); /* Font weight for the title */
+}
+
+/* Style for the close button of the menu */
+.menu-close-btn {
+  color: var(--eerie-black); /* Black color for close button */
+  font-size: 22px; /* Font size for the close button */
+}
+
+/* Adjusting the ion-icon size for the close button */
+.menu-close-btn ion-icon {
+  --ionicon-stroke-width: 50px; /* Adjust stroke width for ion-icon */
+}
+
+/* Mobile menu category list styling */
+.mobile-menu-category-list {
+  margin-bottom: 30px; /* Margin below each category list */
+}
+
+/* Accordion style for each category item in the menu */
+.menu-category .accordion-menu {
+  width: 100%; /* Full width for the accordion */
+  display: -webkit-box; /* Flexbox layout (webkit) */
+  display: -webkit-flex; /* Flexbox layout */
+  display: -ms-flexbox; /* Flexbox layout (IE) */
+  display: flex; /* Flexbox layout */
+  -webkit-box-pack: justify; /* Justify content */
+  -webkit-justify-content: space-between; /* Space between items */
+  -ms-flex-pack: justify; /* Justify content (IE) */
+  justify-content: space-between; /* Space between items */
+  -webkit-box-align: center; /* Align items to the center (webkit) */
+  -webkit-align-items: center; /* Align items to the center */
+  -ms-flex-align: center; /* Align items to the center (IE) */
+  align-items: center; /* Align items to the center */
+}
+
+/* Add bottom border between categories in the list */
+.mobile-menu-category-list .menu-category {
+  border-bottom: 1px solid var(--cultured); /* Add bottom border */
+}
+
+/* Style for category title in the mobile menu */
+.mobile-menu-category-list .menu-title {
+  color: var(--onyx); /* Color for the title */
+  font-size: var(--fs-6); /* Font size for the title */
+  font-weight: var(--weight-500); /* Font weight for the title */
+  padding: 12px 0; /* Padding around the title */
+}
+
+/* Accordion item content font size */
+.accordion-menu > div {
+  font-size: 14px; /* Font size for the content */
+}
+
+/* Style for icons inside accordion menu */
+.accordion-menu ion-icon {
+  color: var(--onyx); /* Icon color */
+  --ionicon-stroke-width: 90px; /* Icon stroke width */
+}
+
+/* Hide add/remove icons when accordion menu is not active */
+.accordion-menu.active .add-icon,
+.accordion-menu .remove-icon {
+  display: none; /* Hide both icons */
+}
+
+/* Show add/remove icons depending on active state */
+.accordion-menu .add-icon,
+.accordion-menu.active .remove-icon {
+  display: block; /* Show respective icon */
+}
+
+/* Style for submenu categories in the menu */
+.menu-category .submenu-category-list {
+  margin-left: 10px; /* Indentation for submenu items */
+}
+
+/* Style for submenu category titles */
+.submenu-title {
+  padding: 6px 0; /* Padding around submenu title */
+  font-size: var(--fs-6); /* Font size for submenu title */
+  color: var(--sonic-silver); /* Color for submenu title */
+  font-weight: var(--weight-300); /* Font weight for submenu title */
+}
+
+/* Hover effect for submenu titles */
+.submenu-title:hover {
+  color: var(--davys-gray); /* Change color on hover */
+}
+
+/* Initial style for hidden submenu lists */
+.submenu-category-list {
+  max-height: 0; /* Hide the submenu initially */
+  overflow: hidden; /* Hide overflowing content */
+  visibility: hidden; /* Make submenu invisible */
+  -webkit-transition: 0.5s ease-in-out; /* Transition effect */
+  -o-transition: 0.5s ease-in-out; /* Transition effect */
+  transition: 0.5s ease-in-out; /* Transition effect */
+}
+
+/* Show submenu when active */
+.submenu-category-list.active {
+  max-height: 148px; /* Set maximum height for active submenu */
+  visibility: visible; /* Make submenu visible */
+}
+
+/* Style for categories in the bottom section of the menu */
+.menu-bottom .menu-category-list {
+  margin-bottom: 20px; /* Margin at the bottom */
+}
+
+/* Remove bottom border for categories in the bottom section */
+.menu-bottom .menu-category {
+  border-bottom: none; /* Remove bottom border */
+}
+
+/* Style for menu titles in the bottom section */
+.menu-bottom .menu-title {
+  font-size: var(--fs-6); /* Font size for bottom section titles */
+  font-weight: var(--weight-500); /* Font weight for bottom section titles */
+  color: var(--eerie-black); /* Color for bottom section titles */
+  padding: 12px 0; /* Padding around the titles */
+}
+
+/* Rotate caret icon when accordion menu is active */
+.accordion-menu.active .caret-back {
+  -webkit-transform: rotate(-0.25turn); /* Rotate caret for webkit */
+  -ms-transform: rotate(-0.25turn); /* Rotate caret for IE */
+  transform: rotate(-0.25turn); /* Rotate caret */
+}
+
+/* Styling for submenu lists in the bottom section of the menu */
+.menu-bottom .submenu-category-list {
+  border: 1px solid var(--cultured); /* Border for submenu */
+  -webkit-border-radius: var(--border-radius-md); /* Rounded corners (webkit) */
+  border-radius: var(--border-radius-md); /* Rounded corners */
+  padding: 0 15px; /* Padding inside submenu */
+  margin-left: 0; /* Remove left margin */
+  -webkit-box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.05); /* Light shadow (webkit) */
+  box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.05); /* Light shadow */
+}
+
+/* Remove bottom border from last submenu items */
+.menu-bottom .submenu-category:not(:last-child) {
+  border-bottom: 1px solid var(--cultured); /* Add bottom border */
+}
+
+/* Style for social media icons at the bottom of the menu */
+.menu-social-container {
+  display: -webkit-box; /* Flexbox layout (webkit) */
+  display: -webkit-flex; /* Flexbox layout */
+  display: -ms-flexbox; /* Flexbox layout (IE) */
+  display: flex; /* Flexbox layout */
+  -webkit-box-pack: center; /* Center items horizontally (webkit) */
+  -webkit-justify-content: center; /* Center items horizontally */
+  -ms-flex-pack: center; /* Center items horizontally (IE) */
+  justify-content: center; /* Center items horizontally */
+  -webkit-box-align: center; /* Center items vertically (webkit) */
+  -webkit-align-items: center; /* Center items vertically */
+  -ms-flex-align: center; /* Center items vertically (IE) */
+  align-items: center; /* Center items vertically */
+  gap: 10px; /* Gap between icons */
+}
+
+/* Style for social media link buttons */
+.menu-social-container .social-link {
+  background: var(--cultured); /* Background color for social link */
+  color: var(--eerie-black); /* Text color for social link */
+  font-size: 20px; /* Font size for social link icons */
+  padding: 10px; /* Padding around the icon */
+  -webkit-border-radius: var(--border-radius-md); /* Rounded corners (webkit) */
+  border-radius: var(--border-radius-md); /* Rounded corners */
+}
+
+/* ----------------------------BANNER---------------------------- */
+
+/* Style for banner section */
+.banner {
+  margin: 30px 0; /* Margin above and below the banner */
+}
+
+/* Style for the container of banner sliders */
+.slider-container {
+  display: -webkit-box; /* Flexbox layout (webkit) */
+  display: -webkit-flex; /* Flexbox layout */
+  display: -ms-flexbox; /* Flexbox layout (IE) */
+  display: flex; /* Flexbox layout */
+  -webkit-box-align: center; /* Center items vertically (webkit) */
+  -webkit-align-items: center; /* Center items vertically */
+  -ms-flex-align: center; /* Center items vertically (IE) */
+  align-items: center; /* Center items vertically */
+  gap: 10px; /* Gap between items */
+  -webkit-border-radius: var(--border-radius-md); /* Rounded corners (webkit) */
+  border-radius: var(--border-radius-md); /* Rounded corners */
+  overflow: auto hidden; /* Hide overflowed content */
+  -webkit-scroll-snap-type: inline mandatory; /* Snap to the closest item (webkit) */
+  -ms-scroll-snap-type: inline mandatory; /* Snap to the closest item (IE) */
+  scroll-snap-type: inline mandatory; /* Snap to the closest item */
+  overscroll-behavior-inline: contain; /* Contain overscroll behavior */
+}
+
+/* Style for each individual banner item */
+.slider-item {
+  position: relative; /* Position relative for each item */
+  min-width: 100%; /* Minimum width for each item */
+  max-height: 450px; /* Maximum height for each item */
+  aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
+  -webkit-border-radius: var(--border-radius-md); /* Rounded corners (webkit) */
+  border-radius: var(--border-radius-md); /* Rounded corners */
+  overflow: hidden; /* Hide content that overflows */
+  scroll-snap-align: start; /* Align the item to the start of the scroll */
+}
+
+/* Style for the banner image */
+.slider-item .banner-img {
+  width: 100%; /* Full width for banner image */
+  height: 100%; /* Full height for banner image */
+  -o-object-fit: cover; /* Cover the container (IE) */
+  object-fit: cover; /* Cover the container */
+  -webkit-object-position: center; /* Center the image (webkit) */
+  object-position: center; /* Center the image */
+}
+
+/* Style for banner content */
+.banner-content {
+  background: hsla(0, 0%, 100%, 0.8); /* White background with transparency */
+  position: absolute; /* Absolute position to place it at the bottom */
+  bottom: 25px; /* 25px distance from the bottom */
+  left: 25px; /* 25px distance from the left */
+  right: 25px; /* 25px distance from the right */
+  padding: 20px 25px; /* Padding inside the banner content */
+  -webkit-border-radius: var(--border-radius-md); /* Rounded corners (webkit) */
+  border-radius: var(--border-radius-md); /* Rounded corners */
+}
+
+/* Style for banner subtitle */
+.banner-subtitle {
+  color: var(--salmon-pink); /* Salmon pink color */
+  font-size: var(--fs-7); /* Font size for subtitle */
+  font-weight: var(--weight-500); /* Font weight */
+  text-transform: capitalize; /* Capitalize the subtitle */
+  letter-spacing: 2px; /* Space between letters */
+  margin-bottom: 10px; /* Margin below the subtitle */
+}
+
+/* Style for banner title */
+.banner-title {
+  color: var(--eerie-black); /* Black color for the title */
+  font-size: var(--fs-1); /* Font size for the title */
+  text-transform: uppercase; /* Uppercase title */
+  line-height: 1; /* Line height */
+  margin-bottom: 10px; /* Margin below the title */
+}
+
+/* Banner text is initially hidden */
+.banner-text {
+  display: none; /* Hide the text */
+}
+
+/* Style for banner button */
+.banner-btn {
+  background: var(--salmon-pink); /* Background color for the button */
+  color: var(--white); /* White text color */
+  width: -webkit-max-content; /* Adjust width (webkit) */
+  width: -moz-max-content; /* Adjust width (mozilla) */
+  width: max-content; /* Adjust width */
+  font-size: var(--fs-11); /* Font size */
+  font-weight: var(--weight-600); /* Font weight */
+  text-transform: uppercase; /* Uppercase text */
+  padding: 4px 10px; /* Padding inside the button */
+  -webkit-border-radius: var(--border-radius-sm); /* Rounded corners (webkit) */
+  border-radius: var(--border-radius-sm); /* Rounded corners */
+  -webkit-transition: var(--transition-timing); /* Transition effect (webkit) */
+  -o-transition: var(--transition-timing); /* Transition effect (Opera) */
+  transition: var(--transition-timing); /* Transition effect */
+}
+
+/* Style for banner button on hover */
+.banner-btn:hover {
+  background: var(--eerie-black); /* Change background on hover */
+}
+
+/* ----------------------------CATEGORY---------------------------- */
+
+/* Category section styling */
+.category {
+  margin-bottom: 30px; /* Margin below each category */
+}
+
+/* Category item container style */
+.category-item-container {
+  display: -webkit-box; /* Flexbox layout (webkit) */
+  display: -webkit-flex; /* Flexbox layout */
+  display: -ms-flexbox; /* Flexbox layout (IE) */
+  display: flex; /* Flexbox layout */
+  -webkit-box-align: center; /* Align items center (webkit) */
+  -webkit-align-items: center; /* Align items center */
+  -ms-flex-align: center; /* Align items center (IE) */
+  align-items: center; /* Align items center */
+  gap: 10px; /* Gap between items */
+  overflow: auto hidden; /* Hide overflowed content */
+  -webkit-scroll-snap-type: inline mandatory; /* Scroll snap behavior (webkit) */
+  -ms-scroll-snap-type: inline mandatory; /* Scroll snap behavior (IE) */
+  scroll-snap-type: inline mandatory; /* Scroll snap behavior */
+  overscroll-behavior-inline: contain; /* Contain overscroll behavior */
+}
+
+/* Category item style */
+.category-item {
+  min-width: 100%; /* Minimum width for the item */
+  display: -webkit-box; /* Flexbox layout (webkit) */
+  display: -webkit-flex; /* Flexbox layout */
+  display: -ms-flexbox; /* Flexbox layout (IE) */
+  display: flex; /* Flexbox layout */
+  -webkit-box-align: center; /* Align items center (webkit) */
+  -webkit-align-items: center; /* Align items center */
+  -ms-flex-align: center; /* Align items center (IE) */
+  align-items: center; /* Align items center */
+  gap: 10px; /* Gap between items */
+  padding: 15px; /* Padding inside the item */
+  border: 1px solid var(--cultured); /* Border color */
+  -webkit-border-radius: var(--border-radius-md); /* Rounded corners (webkit) */
+  border-radius: var(--border-radius-md); /* Rounded corners */
+  scroll-snap-align: start; /* Scroll snap alignment */
+}
+
+/* Category image box style */
+.category-img-box {
+  background: var(--cultured); /* Background color for image box */
+  border: 1px solid hsl(0, 0%, 80%); /* Border around the image box */
+  padding: 10px; /* Padding inside the image box */
+  -webkit-border-radius: var(--border-radius-sm); /* Rounded corners (webkit) */
+  border-radius: var(--border-radius-sm); /* Rounded corners */
+}
+
+/* Category content box style */
+.category-content-box {
+  width: 100%; /* Full width for the content box */
+}
+
+/* Flex layout for category content */
+.category-content-flex {
+  display: -webkit-box; /* Flexbox layout (webkit) */
+  display: -webkit-flex; /* Flexbox layout */
+  display: -ms-flexbox; /* Flexbox layout (IE) */
+  display: flex; /* Flexbox layout */
+  -webkit-box-pack: justify; /* Justify content (webkit) */
+  -webkit-justify-content: space-between; /* Justify content */
+  -ms-flex-pack: justify; /* Justify content (IE) */
+  justify-content: space-between; /* Justify content */
+  -webkit-box-align: center; /* Align items center (webkit) */
+  -webkit-align-items: center; /* Align items center */
+  -ms-flex-align: center; /* Align items center (IE) */
+  align-items: center; /* Align items center */
+  margin-bottom: 10px; /* Margin below the content */
+}
+
+/* Category item title style */
+.category-item-title {
+  color: var(--eerie-black); /* Title color */
+  font-size: var(--fs-9); /* Font size for the title */
+  font-weight: var(--weight-600); /* Font weight */
+  text-transform: uppercase; /* Uppercase text */
+}
+
+/* Category item amount style */
+.category-item-amount {
+  color: var(--sonic-silver); /* Amount color */
+  font-size: var(--fs-11); /* Font size for amount */
+}
+
+/* Category button style */
+.category-btn {
+  color: var(--salmon-pink); /* Button text color */
+  font-size: var(--fs-9); /* Font size for the button */
+  font-weight: var(--weight-500); /* Font weight */
+  text-transform: capitalize; /* Capitalize text */
+}
+
+/* ----------------------------SIDEBAR---------------------------- */
+
+/* Sidebar container style */
+.sidebar {
+  background: var(--white); /* White background */
+  position: fixed; /* Fixed position */
+  top: 0; /* Align to top */
+  left: -100%; /* Initially hide off-screen */
+  bottom: 0; /* Align to bottom */
+  width: 100%; /* Full width */
+  max-width: 320px; /* Max width for the sidebar */
+  padding: 30px; /* Padding inside the sidebar */
+  overflow-y: scroll; /* Enable vertical scrolling */
+  -ms-scroll-chaining: none; /* Disable scroll chaining (IE) */
+  overscroll-behavior: contain; /* Contain overscroll behavior */
+  visibility: hidden; /* Hide the sidebar by default */
+  -webkit-transition: 0.5s ease; /* Transition effect (webkit) */
+  -o-transition: 0.5s ease; /* Transition effect (Opera) */
+  transition: 0.5s ease; /* Transition effect */
+  z-index: 20; /* Z-index to place sidebar above other content */
+}
+
+/* Sidebar active state style */
+.sidebar.active {
+  left: 0; /* Slide the sidebar into view */
+  visibility: visible; /* Make sidebar visible */
+}
+
+/* Sidebar category section style */
+.sidebar-category {
+  margin-bottom: 15px; /* Margin below each category */
+  padding-bottom: 15px; /* Padding at the bottom of each category */
+  border-bottom: 1px solid var(--cultured); /* Border between categories */
+}
+
+/* Sidebar top section style */
+.sidebar-top {
+  display: -webkit-box; /* Flexbox layout (webkit) */
+  display: -webkit-flex; /* Flexbox layout */
+  display: -ms-flexbox; /* Flexbox layout (IE) */
+  display: flex; /* Flexbox layout */
+  -webkit-box-pack: justify; /* Justify content (webkit) */
+  -webkit-justify-content: space-between; /* Justify content */
+  -ms-flex-pack: justify; /* Justify content (IE) */
+  justify-content: space-between; /* Justify content */
+  -webkit-box-align: center; /* Align items center (webkit) */
+  -webkit-align-items: center; /* Align items center */
+  -ms-flex-align: center; /* Align items center (IE) */
+  align-items: center; /* Align items center */
+  margin-bottom: 10px; /* Margin below the section */
+}
+
+/* Sidebar title style */
+.sidebar-title {
+  color: var(--onyx); /* Title color */
+  font-size: var(--fs-5); /* Font size */
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 0.8px; /* Letter spacing */
+  font-weight: var(--weight-600); /* Font weight */
+}
+
+/* Sidebar close button style */
+.sidebar-close-btn {
+  color: var(--eerie-black); /* Close button color */
+  font-size: 22px; /* Font size for close button */
+  font-weight: var(--weight-600); /* Font weight */
+}
+
+/* Sidebar close button icon style */
+.sidebar-close-btn ion-icon {
+  --ionicon-stroke-width: 50px; /* Stroke width for ion-icon */
+}
+
+/* Sidebar accordion menu style */
+.sidebar-accordion-menu {
+  width: 100%; /* Full width */
+  display: -webkit-box; /* Flexbox layout (webkit) */
+  display: -webkit-flex; /* Flexbox layout */
+  display: -ms-flexbox; /* Flexbox layout (IE) */
+  display: flex; /* Flexbox layout */
+  -webkit-box-pack: justify; /* Justify content (webkit) */
+  -webkit-justify-content: space-between; /* Justify content */
+  -ms-flex-pack: justify; /* Justify content (IE) */
+  justify-content: space-between; /* Justify content */
+  -webkit-box-align: center; /* Align items center (webkit) */
+  -webkit-align-items: center; /* Align items center */
+  -ms-flex-align: center; /* Align items center (IE) */
+  align-items: center; /* Align items center */
+  padding: 7px 0; /* Padding inside the menu */
+}
+
+/* Sidebar menu title style */
+.sidebar .menu-title {
+  font-size: var(--fs-5); /* Font size for menu items */
+  color: var(--sonic-silver); /* Menu item text color */
+  font-weight: var(--weight-500); /* Font weight */
+}
+
+/* Sidebar icon style */
+.sidebar-accordion-menu ion-icon {
+  color: var(--sonic-silver); /* Icon color */
+  font-size: 14px; /* Icon size */
+  --ionicon-stroke-width: 70px; /* Stroke width for icon */
+}
+
+/* Sidebar submenu list style */
+.sidebar-submenu-category-list {
+  border-top: 1px solid var(--cultured); /* Border above submenu */
+  max-height: 0; /* Initially hidden submenu */
+  overflow: hidden; /* Hide overflowed content */
+  visibility: hidden; /* Hidden by default */
+  -webkit-transition: 0.5s ease-in-out; /* Smooth transition (webkit) */
+  -o-transition: 0.5s ease-in-out; /* Smooth transition (Opera) */
+  transition: 0.5s ease-in-out; /* Smooth transition */
+}
+
+/* Active state for sidebar submenu list */
+.sidebar-submenu-category-list.active {
+  padding: 13px 0 8px; /* Padding when active */
+  max-height: 122px; /* Set a max-height when active */
+  visibility: visible; /* Make submenu visible */
+}
+
+/* Sidebar Submenu Title Styling */
+.sidebar-submenu-title {
+  display: -webkit-box; /* Fallback for older webkit browsers */
+  display: -webkit-flex; /* For webkit browsers */
+  display: -ms-flexbox; /* For IE/Edge */
+  display: flex; /* Default modern flexbox display for alignment */
+
+  -webkit-box-pack: justify; /* Align items to space out horizontally in webkit browsers */
+  -webkit-justify-content: space-between; /* Spread items out across available space for webkit browsers */
+  -ms-flex-pack: justify; /* Align items with space between for IE/Edge */
+  justify-content: space-between; /* Main flexbox alignment for modern browsers */
+
+  -webkit-box-align: center; /* Align items vertically to the center in webkit browsers */
+  -webkit-align-items: center; /* Align items vertically to the center in webkit browsers */
+  -ms-flex-align: center; /* Align items vertically to the center in IE/Edge */
+  align-items: center; /* Vertically align items to the center for modern browsers */
+
+  color: var(
+    --sonic-silver
+  ); /* Text color set to a custom variable for the title */
+  font-size: var(--fs-7); /* Font size set using a custom variable */
+  padding: 2px 0; /* Vertical padding for spacing */
+}
+
+/* Hover effect for the sidebar submenu title */
+.sidebar-submenu-title:hover {
+  color: var(--eerie-black); /* Change color on hover */
+}
+
+/* Capitalize text for product names */
+.sidebar .product-name {
+  text-transform: capitalize; /* Capitalize first letter of each word */
+}
+
+/* Styling for sidebar accordion menu items */
+.sidebar-accordion-menu.active .add-icon,
+.sidebar-accordion-menu .remove-icon {
+  display: none; /* Hide the add and remove icons initially */
+}
+
+/* Display the appropriate icon based on the active state */
+.sidebar-accordion-menu .add-icon,
+.sidebar-accordion-menu.active .remove-icon {
+  display: block; /* Display the correct icon when active */
+}
+
+/* Showcase heading styling in sidebar */
+.sidebar .showcase-heading {
+  font-size: var(--fs-5); /* Set font size using custom variable */
+  font-weight: var(
+    --weight-600
+  ); /* Set font weight to bold using a custom variable */
+  color: var(--onyx); /* Set color to a dark grey */
+  text-transform: uppercase; /* Uppercase transformation for a bold look */
+  letter-spacing: 0.8px; /* Slightly spaced letters for better readability */
+  margin-bottom: 15px; /* Margin to add spacing below the heading */
+}
+
+/* Showcase item layout inside sidebar */
+.sidebar .showcase {
+  display: -webkit-box; /* Fallback for older webkit browsers */
+  display: -webkit-flex; /* For webkit browsers */
+  display: -ms-flexbox; /* For IE/Edge */
+  display: flex; /* Default modern flexbox display for alignment */
+
+  -webkit-box-align: center; /* Align items vertically in webkit browsers */
+  -webkit-align-items: center; /* Align items vertically in webkit browsers */
+  -ms-flex-align: center; /* Align items vertically in IE/Edge */
+  align-items: center; /* Vertically align items to the center for modern browsers */
+
+  gap: 15px; /* Space between the elements inside the showcase */
+}
+
+/* Add margin between all showcases except the last one */
+.sidebar .showcase:not(:last-child) {
+  margin-bottom: 15px; /* Add margin at the bottom for spacing */
+}
+
+/* Showcase image styling */
+.sidebar .showcase-img {
+  -webkit-border-radius: var(
+    --border-radius-sm
+  ); /* Small rounded corners for webkit browsers */
+  border-radius: var(
+    --border-radius-sm
+  ); /* Small rounded corners for modern browsers */
+}
+
+/* Styling for the content inside the showcase */
+.sidebar .showcase-content {
+  width: -webkit-calc(100% - 90px); /* Width calculation for webkit browsers */
+  width: calc(100% - 90px); /* Width calculation for modern browsers */
+}
+
+/* Showcase title styling */
+.sidebar .showcase-title {
+  color: var(--onyx); /* Set color to a dark grey */
+  font-size: var(--fs-7); /* Font size using custom variable */
+  font-weight: var(--weight-400); /* Regular font weight */
+  text-transform: capitalize; /* Capitalize text */
+  overflow: hidden; /* Prevent overflow of text */
+  white-space: nowrap; /* Prevent text from wrapping */
+  -o-text-overflow: ellipsis; /* Use ellipsis for overflow in older browsers */
+  text-overflow: ellipsis; /* Show ellipsis for overflowing text */
+  letter-spacing: 0.5px; /* Slight letter spacing for better readability */
+}
+
+/* Showcase rating styling */
+.sidebar .showcase-rating {
+  display: -webkit-box; /* Fallback for older webkit browsers */
+  display: -webkit-flex; /* For webkit browsers */
+  display: -ms-flexbox; /* For IE/Edge */
+  display: flex; /* Default flexbox display for alignment */
+
+  -webkit-box-align: center; /* Align items vertically in webkit browsers */
+  -webkit-align-items: center; /* Align items vertically in webkit browsers */
+  -ms-flex-align: center; /* Align items vertically in IE/Edge */
+  align-items: center; /* Align items vertically to the center for modern browsers */
+
+  color: var(--sandy-brown); /* Set text color to a sandy brown */
+  font-size: 13px; /* Set font size */
+  padding: 4px 0; /* Padding for spacing */
+}
+
+/* Price box layout for sidebar products */
+.sidebar .price-box {
+  display: -webkit-box; /* Fallback for older webkit browsers */
+  display: -webkit-flex; /* For webkit browsers */
+  display: -ms-flexbox; /* For IE/Edge */
+  display: flex; /* Default flexbox display for alignment */
+
+  -webkit-box-align: center; /* Align items vertically in webkit browsers */
+  -webkit-align-items: center; /* Align items vertically in webkit browsers */
+  -ms-flex-align: center; /* Align items vertically in IE/Edge */
+  align-items: center; /* Align items vertically to the center for modern browsers */
+
+  gap: 15px; /* Gap between the price elements */
+}
+
+/* Styling for strikethrough (original price) */
+.sidebar .price-box del {
+  color: var(
+    --sonic-silver
+  ); /* Set color to a muted grey for the deleted price */
+  font-size: 13px; /* Font size for the deleted price */
+}
+
+/* Styling for the actual price */
+.sidebar .price-box .price {
+  font-size: var(--fs-7); /* Set font size using custom variable */
+  font-weight: var(--weight-600); /* Bold font weight */
+  color: var(--davys-gray); /* Color set to a grey shade */
+}
+
+/* Minimal product layout */
+.product-minimal {
+  margin-bottom: 30px; /* Margin below the product section */
+}
+
+/* Styling for the product showcase inside minimal products */
+.product-minimal .product-showcase {
+  margin-bottom: 10px; /* Margin below the showcase for spacing */
+}
+
+/* Wrapper for minimal product showcase */
+.product-minimal .showcase-wrapper {
+  display: -webkit-box; /* Fallback for older webkit browsers */
+  display: -webkit-flex; /* For webkit browsers */
+  display: -ms-flexbox; /* For IE/Edge */
+  display: flex; /* Default flexbox display for alignment */
+
+  -webkit-box-align: center; /* Align items vertically in webkit browsers */
+  -webkit-align-items: center; /* Align items vertically in webkit browsers */
+  -ms-flex-align: center; /* Align items vertically in IE/Edge */
+  align-items: center; /* Align items vertically to the center for modern browsers */
+
+  overflow-x: auto; /* Allow horizontal scrolling */
+  overscroll-behavior-inline: contain; /* Prevent overscroll behavior */
+
+  -webkit-scroll-snap-type: inline mandatory; /* Enable snap behavior in webkit browsers */
+  -ms-scroll-snap-type: inline mandatory; /* For IE/Edge */
+  scroll-snap-type: inline mandatory; /* Enable snap behavior for modern browsers */
+}
+
+/* Container for each product item inside minimal showcase */
+.product-minimal .showcase-container {
+  min-width: 100%; /* Ensure container takes full width */
+  padding: 0 5px; /* Padding for spacing between items */
+  scroll-snap-align: start; /* Align the first item at the start of the container */
+}
+
+/* Individual product showcase in minimal layout */
+.product-minimal .showcase {
+  display: -webkit-box; /* Fallback for older webkit browsers */
+  display: -webkit-flex; /* For webkit browsers */
+  display: -ms-flexbox; /* For IE/Edge */
+  display: flex; /* Default modern flexbox display for alignment */
+
+  -webkit-box-pack: start; /* Align items to the start in webkit browsers */
+  -webkit-justify-content: flex-start; /* Align items to the left in webkit browsers */
+  -ms-flex-pack: start; /* Align items to the left in IE/Edge */
+  justify-content: flex-start; /* Align items to the left in modern browsers */
+
+  -webkit-box-align: center; /* Align items vertically in webkit browsers */
+  -webkit-align-items: center; /* Align items vertically in webkit browsers */
+  -ms-flex-align: center; /* Align items vertically in IE/Edge */
+  align-items: center; /* Vertically align items to the center */
+
+  gap: 15px; /* Space between the image and content */
+
+  border: 1px solid var(--cultured); /* Border color for showcase item */
+  padding: 15px; /* Padding inside each showcase item */
+
+  -webkit-border-radius: var(
+    --border-radius-md
+  ); /* Medium border radius for webkit browsers */
+  border-radius: var(
+    --border-radius-md
+  ); /* Medium border radius for modern browsers */
+}
+
+/* Margin between product showcases in the minimal layout */
+.product-minimal .showcase:not(:last-child) {
+  margin-bottom: 15px; /* Space between items */
+}
+
+/* Content inside the product showcase */
+.product-minimal .showcase-content {
+  width: -webkit-calc(100% - 85px); /* Width calculation for webkit browsers */
+  width: calc(100% - 85px); /* Width calculation for modern browsers */
+}
+
+/* Title styling for product showcase */
+.product-minimal .showcase-title {
+  color: var(--eerie-black); /* Set text color */
+  font-size: var(--fs-7); /* Font size using custom variable */
+  font-weight: var(--weight-600); /* Set font weight */
+  text-transform: capitalize; /* Capitalize text */
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden; /* Hide overflowed text */
+  -o-text-overflow: ellipsis; /* For older browsers, show ellipsis for overflowed text */
+  text-overflow: ellipsis; /* For modern browsers, show ellipsis for overflowed text */
+  margin-bottom: 2px; /* Margin below the title for spacing */
+}
+
+/* Category styling in the minimal product */
+.product-minimal .showcase-category {
+  width: -webkit-max-content; /* Set to content width for webkit browsers */
+  width: -moz-max-content; /* For Firefox */
+  width: max-content; /* For modern browsers */
+
+  color: var(--davys-gray); /* Set text color to a grey shade */
+  font-size: var(--fs-8); /* Font size using custom variable */
+  text-transform: capitalize; /* Capitalize text */
+  margin-bottom: 3px; /* Margin below category for spacing */
+}
+
+/* Hover effect for category */
+.product-minimal .showcase-category:hover {
+  color: var(--salmon-pink); /* Change color to salmon pink on hover */
+}
+
+/* Price box layout inside minimal product */
+.product-minimal .price-box {
+  display: -webkit-box; /* Fallback for older webkit browsers */
+  display: -webkit-flex; /* For webkit browsers */
+  display: -ms-flexbox; /* For IE/Edge */
+  display: flex; /* Default flexbox display for alignment */
+
+  -webkit-box-align: center; /* Align items vertically in webkit browsers */
+  -webkit-align-items: center; /* Align items vertically in webkit browsers */
+  -ms-flex-align: center; /* Align items vertically in IE/Edge */
+  align-items: center; /* Vertically align items to the center */
+
+  gap: 10px; /* Gap between price elements */
+}
+
+/* Price styling inside minimal product */
+.product-minimal .price {
+  font-size: var(--fs-7); /* Set font size */
+  font-weight: var(--weight-700); /* Set font weight to bold */
+  color: var(--salmon-pink); /* Set color to salmon pink */
+}
+
+/* Deleted price (strikethrough) styling in minimal product */
+.product-minimal .price-box del {
+  font-size: var(--fs-9); /* Set smaller font size */
+  color: var(--sonic-silver); /* Set color to grey */
+}
+
+/* Featured product layout */
+.product-featured {
+  margin-bottom: 30px; /* Margin below the featured product section */
+}
+
+/* Showcase wrapper inside featured products */
+.product-featured .showcase-wrapper {
+  display: -webkit-box; /* Fallback for older webkit browsers */
+  display: -webkit-flex; /* For webkit browsers */
+  display: -ms-flexbox; /* For IE/Edge */
+  display: flex; /* Default flexbox display for alignment */
+
+  -webkit-box-align: center; /* Align items vertically in webkit browsers */
+  -webkit-align-items: center; /* Align items vertically in webkit browsers */
+  -ms-flex-align: center; /* Align items vertically in IE/Edge */
+  align-items: center; /* Align items vertically to the center */
+
+  gap: 20px; /* Gap between featured product elements */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overscroll-behavior-inline: contain; /* Prevent overscroll behavior */
+
+  -webkit-scroll-snap-type: inline mandatory; /* Snap behavior for webkit browsers */
+  -ms-scroll-snap-type: inline mandatory; /* Snap behavior for IE/Edge */
+  scroll-snap-type: inline mandatory; /* Snap behavior for modern browsers */
+}
+
+/* Featured product showcase container */
+.product-featured .showcase-container {
+  min-width: 100%; /* Ensure container takes full width */
+  padding: 30px; /* Padding for spacing inside the container */
+  border: 1px solid var(--cultured); /* Border for the container */
+  -webkit-border-radius: var(
+    --border-radius-md
+  ); /* Rounded corners for webkit browsers */
+  border-radius: var(
+    --border-radius-md
+  ); /* Rounded corners for modern browsers */
+  scroll-snap-align: start; /* Align the first item at the start of the container */
+}
+
+/* Featured product image styling */
+.product-featured .showcase-img {
+  width: 100%; /* Ensure image takes full width */
+  height: 100%; /* Ensure image takes full height */
+  -o-object-fit: cover; /* Cover the area without distortion for old browsers */
+  object-fit: cover; /* Cover the area without distortion for modern browsers */
+}
+
+/* Featured product content area */
+.product-featured .showcase-content {
+  margin-top: 30px; /* Space between image and content */
+}
+
+/* Featured product rating styling */
+.product-featured .showcase-rating {
+  color: var(--sandy-brown); /* Set text color to sandy brown */
+  display: -webkit-box; /* Fallback for older webkit browsers */
+  display: -webkit-flex; /* For webkit browsers */
+  display: -ms-flexbox; /* For IE/Edge */
+  display: flex; /* Default flexbox display for alignment */
+
+  -webkit-box-align: center; /* Align items vertically in webkit browsers */
+  -webkit-align-items: center; /* Align items vertically in webkit browsers */
+  -ms-flex-align: center; /* Align items vertically in IE/Edge */
+  align-items: center; /* Align items vertically to the center */
+
+  font-size: 16px; /* Set font size for the rating */
+  margin-bottom: 15px; /* Margin below the rating for spacing */
+}
+
+/* Featured product title styling */
+.product-featured .showcase-title {
+  font-size: var(--fs-7); /* Set font size */
+  color: var(--eerie-black); /* Set text color */
+  overflow: hidden; /* Prevent overflow of text */
+  white-space: nowrap; /* Prevent text wrapping */
+  -o-text-overflow: ellipsis; /* For older browsers, show ellipsis for overflowed text */
+  text-overflow: ellipsis; /* For modern browsers, show ellipsis for overflowed text */
+  text-transform: uppercase; /* Transform text to uppercase */
+  margin-bottom: 3px; /* Margin below the title for spacing */
+}
+
+/* Styling for product description in featured products */
+.product-featured .showcase-desc {
+  color: var(--sonic-silver); /* Set text color to a light grey shade */
+  font-size: var(--fs-7); /* Set font size using a custom variable */
+  font-weight: var(--weight-300); /* Set font weight to light */
+  margin-bottom: 10px; /* Add space below the description */
+}
+
+/* Styling for price box in featured products */
+.product-featured .price-box {
+  font-size: var(--fs-3); /* Set font size for price */
+  display: -webkit-box; /* Flexbox for older webkit browsers */
+  display: -webkit-flex; /* Flexbox for webkit browsers */
+  display: -ms-flexbox; /* Flexbox for IE/Edge */
+  display: flex; /* Set default flexbox display for alignment */
+  gap: 10px; /* Add space between elements inside price box */
+  margin-bottom: 10px; /* Add space below the price box */
+}
+
+/* Styling for price text in featured products */
+.product-featured .price {
+  color: var(--salmon-pink); /* Set color to salmon pink for price */
+  font-weight: var(--weight-700); /* Set font weight to bold */
+}
+
+/* Styling for deleted price (strikethrough) in featured products */
+.product-featured del {
+  color: var(--sonic-silver); /* Set color to grey for deleted price */
+  font-weight: var(
+    --weight-300
+  ); /* Set font weight to light for deleted price */
+}
+
+/* Styling for add to cart button in featured products */
+.product-featured .add-cart-btn {
+  background: var(--salmon-pink); /* Set background color to salmon pink */
+  padding: 8px 15px; /* Add padding inside the button */
+  color: var(--white); /* Set text color to white */
+  font-weight: var(--fs-9); /* Set font size using custom variable */
+  font-weight: var(--weight-700); /* Set font weight to bold */
+  text-transform: uppercase; /* Make button text uppercase */
+  -webkit-border-radius: var(
+    --border-radius-md
+  ); /* Rounded corners for webkit browsers */
+  border-radius: var(
+    --border-radius-md
+  ); /* Rounded corners for modern browsers */
+  margin-bottom: 15px; /* Add space below the button */
+  -webkit-transition: var(
+    --transition-timing
+  ); /* Set transition for hover effect */
+  -o-transition: var(
+    --transition-timing
+  ); /* Set transition for older browsers */
+  transition: var(--transition-timing); /* Set transition for modern browsers */
+}
+
+/* Styling for add to cart button on hover in featured products */
+.product-featured .add-cart-btn:hover {
+  background: var(--eerie-black); /* Change background to black on hover */
+  color: var(--white); /* Keep text color white on hover */
+}
+
+/* Styling for product status in featured products */
+.product-featured .showcase-status {
+  margin-bottom: 15px; /* Add space below status */
+}
+
+/* Wrapper for status elements in featured products */
+.product-featured .showcase-status .wrapper {
+  display: -webkit-box; /* Flexbox for older webkit browsers */
+  display: -webkit-flex; /* Flexbox for webkit browsers */
+  display: -ms-flexbox; /* Flexbox for IE/Edge */
+  display: flex; /* Set default flexbox display */
+  -webkit-box-pack: justify; /* Align items to justify space in webkit browsers */
+  -webkit-justify-content: space-between; /* Distribute space between items */
+  -ms-flex-pack: justify; /* Align items to justify space in IE/Edge */
+  justify-content: space-between; /* Distribute space between items */
+  -webkit-box-align: center; /* Align items vertically in webkit browsers */
+  -webkit-align-items: center; /* Align items vertically in webkit browsers */
+  -ms-flex-align: center; /* Align items vertically in IE/Edge */
+  align-items: center; /* Align items vertically to center */
+  color: var(--eerie-black); /* Set text color to black */
+  font-size: var(--fs-9); /* Set font size for status */
+  font-weight: var(--weight-400); /* Set font weight to normal */
+  text-transform: uppercase; /* Transform text to uppercase */
+  margin-bottom: 10px; /* Add space below the status */
+}
+
+/* Styling for status bar in featured products */
+.product-featured .showcase-status-bar {
+  background: var(--cultured); /* Set background to light grey */
+  position: relative; /* Position bar relative to its container */
+  height: 10px; /* Set height of the bar */
+  -webkit-border-radius: 5px; /* Rounded corners for webkit browsers */
+  border-radius: 5px; /* Rounded corners for modern browsers */
+}
+
+/* Styling for progress within the status bar */
+.product-featured .showcase-status-bar::before {
+  position: absolute; /* Position the progress indicator absolutely */
+  content: ""; /* Empty content for the pseudo-element */
+  top: 3px; /* Align progress to top */
+  left: 3px; /* Align progress to left */
+  height: 4px; /* Set height of the progress bar */
+  width: 40%; /* Set width of the progress bar to 40% */
+  background: var(
+    --salmon-pink
+  ); /* Set background color of the progress to salmon pink */
+  -webkit-border-radius: 4px; /* Rounded corners for webkit browsers */
+  border-radius: 4px; /* Rounded corners for modern browsers */
+}
+
+/* Styling for countdown description text */
+.product-featured .countdown-desc {
+  color: var(--eerie-black); /* Set text color to black */
+  font-size: var(--fs-9); /* Set font size */
+  font-weight: var(--weight-600); /* Set font weight to bold */
+  text-transform: uppercase; /* Transform text to uppercase */
+  margin-bottom: 10px; /* Add space below the description */
+}
+
+/* Styling for countdown timer display */
+.product-featured .countdown {
+  display: -webkit-box; /* Flexbox for older webkit browsers */
+  display: -webkit-flex; /* Flexbox for webkit browsers */
+  display: -ms-flexbox; /* Flexbox for IE/Edge */
+  display: flex; /* Set default flexbox display */
+  gap: 5px; /* Add space between countdown elements */
+}
+
+/* Styling for individual countdown content elements */
+.product-featured .countdown-content {
+  padding: 5px; /* Add padding inside countdown elements */
+  background: var(--cultured); /* Set background to light grey */
+  -webkit-border-radius: var(
+    --border-radius-md
+  ); /* Rounded corners for webkit browsers */
+  border-radius: var(
+    --border-radius-md
+  ); /* Rounded corners for modern browsers */
+  text-align: center; /* Center text inside countdown elements */
+}
+
+/* Styling for individual countdown numbers */
+.product-featured .display-number {
+  color: var(--eerie-black); /* Set text color to black */
+  font-size: var(--fs-5); /* Set font size */
+  font-weight: var(--weight-500); /* Set font weight to medium */
+  min-width: 40px; /* Set minimum width for countdown numbers */
+}
+
+/* Styling for text alongside countdown numbers */
+.product-featured .display-text {
+  color: var(--davys-gray); /* Set text color to grey */
+  font-size: var(--fs-11); /* Set font size for smaller text */
+}
+
+/* ----------------------------PRODUCT GRID SECTION---------------------------- */
+
+/* Styling for product container in the grid */
+.product-main {
+  margin-bottom: 30px; /* Add space below the main product container */
+}
+
+/* Styling for product grid layout */
+.product-grid {
+  display: -ms-grid; /* Grid layout for IE/Edge */
+  display: grid; /* Set grid layout for modern browsers */
+  -ms-grid-columns: 1fr; /* Set a single column grid for IE/Edge */
+  grid-template-columns: 1fr; /* Set a single column grid */
+  gap: 25px; /* Add space between grid items */
+}
+
+/* Styling for individual product showcase inside the grid */
+.product-grid .showcase {
+  border: 1px solid var(--cultured); /* Add border around product showcase */
+  -webkit-border-radius: var(
+    --border-radius-md
+  ); /* Rounded corners for webkit browsers */
+  border-radius: var(
+    --border-radius-md
+  ); /* Rounded corners for modern browsers */
+  overflow: hidden; /* Hide any content that overflows the container */
+  -webkit-transition: var(
+    --transition-timing
+  ); /* Set transition for hover effect */
+  -o-transition: var(
+    --transition-timing
+  ); /* Set transition for older browsers */
+  transition: var(--transition-timing); /* Set transition for modern browsers */
+}
+
+/* Hover effect for product showcase in the grid */
+.product-grid .showcase:hover {
+  -webkit-box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1); /* Set shadow effect for hover in webkit browsers */
+  box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1); /* Set shadow effect for hover in modern browsers */
+}
+
+/* Styling for product banner in the grid */
+.product-grid .showcase-banner {
+  position: relative; /* Set relative position for banner */
+}
+
+/* Styling for product image inside grid showcase */
+.product-grid .product-img {
+  width: 100%; /* Set width of the image to 100% of container */
+  height: 100%; /* Set height of the image to 100% of container */
+  -o-object-fit: cover; /* Cover the area without distortion for older browsers */
+  object-fit: cover; /* Cover the area without distortion for modern browsers */
+  -webkit-transition: var(
+    --transition-timing
+  ); /* Set transition for hover effect */
+  -o-transition: var(
+    --transition-timing
+  ); /* Set transition for older browsers */
+  transition: var(--transition-timing); /* Set transition for modern browsers */
+}
+
+/* Default image styling for product grid */
+.product-grid .product-img.default {
+  position: relative; /* Set relative positioning for default image */
+  z-index: 1; /* Ensure default image is below the hover image */
+}
+
+/* Hover image styling for product grid */
+.product-grid .product-img.hover {
+  position: absolute; /* Set absolute positioning for hover image */
+  top: 0; /* Align top edge */
+  left: 0; /* Align left edge */
+  z-index: 2; /* Set hover image above the default image */
+  opacity: 0; /* Set initial opacity to 0 for hover image */
+}
+
+/* Hover effect for product grid showcase */
+.product-grid .showcase:hover .product-img.hover {
+  opacity: 1; /* Set opacity to 1 for hover image on hover */
+}
+
+/* Fade out default image on hover */
+.product-grid .showcase:hover .product-img.default {
+  opacity: 0; /* Set opacity to 0 for default image on hover */
+}
+
+/* Zoom effect on product image in grid on hover */
+.product-grid .showcase:hover .product-img {
+  -webkit-transform: scale(1.1); /* Scale image up for webkit browsers */
+  -ms-transform: scale(1.1); /* Scale image up for IE/Edge */
+  transform: scale(1.1); /* Scale image up for modern browsers */
+}
+
+/* Badge styling for product showcase in grid */
+.product-grid .showcase-badge {
+  position: absolute; /* Position badge absolutely */
+  top: 15px; /* Set badge 15px from the top */
+  left: 15px; /* Set badge 15px from the left */
+  background: var(--ocean-green); /* Set background color to ocean green */
+  font-size: var(--fs-8); /* Set font size */
+  font-weight: var(--weight-500); /* Set font weight to medium */
+  color: var(--white); /* Set text color to white */
+  padding: 0 8px; /* Add horizontal padding inside badge */
+  -webkit-border-radius: var(
+    --border-radius-sm
+  ); /* Rounded corners for webkit browsers */
+  border-radius: var(
+    --border-radius-sm
+  ); /* Rounded corners for modern browsers */
+  z-index: 3; /* Ensure badge is on top */
+}
+
+/* Angled badge for product showcase */
+.product-grid .showcase-badge.angle {
+  top: 8px; /* Set top of angled badge */
+  left: -29px; /* Set left of angled badge */
+  -webkit-transform: rotate(-45deg); /* Rotate badge for webkit browsers */
+  -ms-transform: rotate(-45deg); /* Rotate badge for IE/Edge */
+  transform: rotate(-45deg); /* Rotate badge for modern browsers */
+  text-transform: uppercase; /* Make badge text uppercase */
+  font-size: 11px; /* Set font size */
+  padding: 5px 40px; /* Set padding for angled badge */
+}
+
+/* Black badge styling for product showcase */
+.product-grid .showcase-badge.black {
+  background: var(--eerie-black); /* Set background color to black */
+}
+
+/* Pink badge styling for product showcase */
+.product-grid .showcase-badge.pink {
+  background: var(--salmon-pink); /* Set background color to salmon pink */
+}
+
+/* Positioning and styling for actions on product showcase */
+.product-grid .showcase-actions {
+  position: absolute; /* Position actions absolutely */
+  top: 10px; /* Set actions 10px from the top */
+  right: 10px; /* Set actions 10px from the right */
+  font-size: 20px; /* Set font size for actions */
+  -webkit-transform: translateX(
+    50px
+  ); /* Shift actions off-screen in webkit browsers */
+  -ms-transform: translateX(50px); /* Shift actions off-screen in IE/Edge */
+  transform: translateX(
+    50px
+  ); /* Shift actions off-screen for modern browsers */
+  -webkit-transition: var(
+    --transition-timing
+  ); /* Set transition for hover effect */
+  -o-transition: var(
+    --transition-timing
+  ); /* Set transition for older browsers */
+  transition: var(--transition-timing); /* Set transition for modern browsers */
+  z-index: 3; /* Ensure actions are above other content */
+}
+
+/* Show actions in product grid on hover */
+.product-grid .showcase:hover .showcase-actions {
+  -webkit-transform: translateX(
+    0
+  ); /* Bring actions into view for webkit browsers */
+  -ms-transform: translateX(0); /* Bring actions into view for IE/Edge */
+  transform: translateX(0); /* Bring actions into view for modern browsers */
+}
+
+/* Styling for action buttons in product grid */
+.product-grid .btn-action {
+  background: var(--white); /* Set background to white */
+  color: var(--sonic-silver); /* Set text color to light grey */
+  margin-bottom: 5px; /* Add space below the button */
+  border: 1px solid var(--cultured); /* Add border around button */
+  padding: 5px; /* Add padding inside the button */
+  -webkit-border-radius: var(
+    --border-radius-sm
+  ); /* Rounded corners for webkit browsers */
+  border-radius: var(
+    --border-radius-sm
+  ); /* Rounded corners for modern browsers */
+  -webkit-transition: var(
+    --transition-timing
+  ); /* Set transition for hover effect */
+  -o-transition: var(
+    --transition-timing
+  ); /* Set transition for older browsers */
+  transition: var(--transition-timing); /* Set transition for modern browsers */
+}
+
+/* Hover effect for action buttons in product grid */
+.product-grid .btn-action:hover {
+  background: var(--eerie-black); /* Change background to black on hover */
+  color: var(--white); /* Change text color to white on hover */
+  border-color: var(--eerie-black); /* Change border to black on hover */
+}
+
+/* Content area inside product showcase in grid */
+.product-grid .showcase-content {
+  padding: 15px 20px 0; /* Add padding inside the content area */
+}
+
+/* Category styling in product grid */
+.product-grid .showcase-category {
+  color: var(--salmon-pink); /* Set text color to salmon pink */
+  font-size: var(--fs-9); /* Set font size for category */
+  font-weight: var(--weight-500); /* Set font weight to medium */
+  text-transform: uppercase; /* Make text uppercase */
+  margin-bottom: 10px; /* Add space below the category */
+}
+
+/* Title styling in product grid */
+.product-grid .showcase-title {
+  color: var(--sonic-silver); /* Set title text color to grey */
+  font-size: var(--fs-8); /* Set font size */
+  font-weight: var(--weight-300); /* Set font weight to light */
+  text-transform: capitalize; /* Capitalize text */
+  letter-spacing: 1px; /* Add slight spacing between letters */
+  margin-bottom: 10px; /* Add space below the title */
+  -webkit-transition: var(
+    --transition-timing
+  ); /* Set transition for hover effect */
+  -o-transition: var(
+    --transition-timing
+  ); /* Set transition for older browsers */
+  transition: var(--transition-timing); /* Set transition for modern browsers */
+}
+
+/* Hover effect for product title in product grid */
+.product-grid .showcase-title:hover {
+  color: var(--eerie-black); /* Change text color to black on hover */
+}
+
+.product-grid .showcase-rating {
+  display: -webkit-box; /* Old webkit flexbox model for compatibility */
+  display: -webkit-flex; /* Modern webkit flexbox model for compatibility */
+  display: -ms-flexbox; /* Flexbox for IE/Edge */
+  display: flex; /* Set flexbox display model */
+  color: var(--sandy-brown); /* Set text color for ratings to sandy brown */
+  margin-bottom: 10px; /* Add space below the rating container */
+}
+
+.product-grid .price-box {
+  display: -webkit-box; /* Old webkit flexbox model for compatibility */
+  display: -webkit-flex; /* Modern webkit flexbox model for compatibility */
+  display: -ms-flexbox; /* Flexbox for IE/Edge */
+  display: flex; /* Set flexbox display model */
+  gap: 10px; /* Add space between elements inside the price box */
+  font-size: var(--fs-7); /* Set font size for price */
+  color: var(--eerie-black); /* Set text color for price to eerie black */
+  margin-bottom: 10px; /* Add space below the price box */
+}
+
+.product-grid .price {
+  font-weight: var(--weight-700); /* Make the price bold */
+}
+
+.product-grid del {
+  color: var(
+    --sonic-silver
+  ); /* Set color for the deleted price (strikethrough) to sonic silver */
+}
+
+/* ----------------------------TESTIMONIALS---------------------------- */
+
+.testimonials-box {
+  margin-bottom: 50px; /* Add space below the testimonial section */
+}
+
+.testimonial-card {
+  padding: 30px 20px; /* Add padding around testimonial card */
+  border: 1px solid var(--cultured); /* Add border around the testimonial card */
+  -webkit-border-radius: var(
+    --border-radius-md
+  ); /* Set rounded corners for testimonial card in webkit browsers */
+  border-radius: var(
+    --border-radius-md
+  ); /* Set rounded corners for testimonial card */
+  text-align: center; /* Center-align the text inside the card */
+  margin-bottom: 25px; /* Add space below each testimonial card */
+}
+
+.testimonial-banner {
+  margin: auto; /* Center the testimonial banner */
+  margin-bottom: 20px; /* Add space below the banner */
+  -webkit-border-radius: 50%; /* Set the border radius to make the banner a circle in webkit browsers */
+  border-radius: 50%; /* Set the border radius to make the banner a circle */
+}
+
+.testimonial-name {
+  font-weight: var(--weight-700); /* Set font weight to bold for the name */
+  text-transform: uppercase; /* Capitalize the name */
+  color: var(--sonic-silver); /* Set text color for the name */
+  margin-bottom: 5px; /* Add space below the name */
+}
+
+.testimonial-title {
+  color: var(--onyx); /* Set text color for the title */
+  font-size: var(--fs-7); /* Set font size for the title */
+  margin-bottom: 15px; /* Add space below the title */
+}
+
+.quotation-img {
+  margin: auto; /* Center the quotation image */
+  margin-bottom: 10px; /* Add space below the image */
+}
+
+.testimonial-desc {
+  max-width: 70%; /* Set max width of testimonial description */
+  margin: auto; /* Center the description */
+  color: var(--sonic-silver); /* Set text color for the description */
+  font-size: var(--fs-7); /* Set font size for the description */
+}
+
+/* ----------------------------CALL TO ACTION---------------------------- */
+
+.cta-container {
+  position: relative; /* Set position to relative for absolute positioning inside */
+  aspect-ratio: 5 / 6; /* Set aspect ratio for the container */
+  -webkit-border-radius: var(
+    --border-radius-md
+  ); /* Set rounded corners for the CTA container in webkit browsers */
+  border-radius: var(
+    --border-radius-md
+  ); /* Set rounded corners for the CTA container */
+  overflow: hidden; /* Hide overflow to maintain clean edges */
+  margin-bottom: 25px; /* Add space below the CTA container */
+}
+
+.cta-banner {
+  width: 100%; /* Make the CTA banner take up the full width */
+  height: 100%; /* Make the CTA banner take up the full height */
+  -o-object-fit: cover; /* Set the object fit for older browsers */
+  object-fit: cover; /* Ensure the image covers the whole container */
+}
+
+.cta-content {
+  background: hsla(
+    0,
+    0%,
+    100%,
+    0.7
+  ); /* Set a semi-transparent white background */
+  position: absolute; /* Position absolutely inside the CTA container */
+  top: 50%; /* Vertically center the content */
+  left: 50%; /* Horizontally center the content */
+  -webkit-transform: translate(
+    -50%,
+    -50%
+  ); /* Center content in webkit browsers */
+  -ms-transform: translate(-50%, -50%); /* Center content in IE/Edge */
+  transform: translate(-50%, -50%); /* Center content */
+  width: -webkit-fit-content; /* Set width to content size in webkit browsers */
+  width: -moz-fit-content; /* Set width to content size in firefox */
+  width: fit-content; /* Set width to content size */
+  padding: 15px 20px; /* Add padding inside the content box */
+  text-align: center; /* Center the text inside the box */
+  -webkit-border-radius: var(
+    --border-radius-sm
+  ); /* Set rounded corners for the content box in webkit browsers */
+  border-radius: var(
+    --border-radius-sm
+  ); /* Set rounded corners for the content box */
+}
+
+.cta-content .discount {
+  background: var(--eerie-black); /* Set background to eerie black */
+  color: var(--white); /* Set text color to white */
+  font-size: var(--fs-11); /* Set font size for the discount text */
+  font-weight: var(--weight-600); /* Set font weight to semi-bold */
+  text-transform: uppercase; /* Capitalize the text */
+  width: -webkit-max-content; /* Set width to content size in webkit browsers */
+  width: -moz-max-content; /* Set width to content size in firefox */
+  width: max-content; /* Set width to content size */
+  margin: auto; /* Center the discount box */
+  padding: 0 5px; /* Add padding inside the discount box */
+  -webkit-border-radius: var(
+    --border-radius-sm
+  ); /* Set rounded corners for the discount box in webkit browsers */
+  border-radius: var(
+    --border-radius-sm
+  ); /* Set rounded corners for the discount box */
+  margin-bottom: 5px; /* Add space below the discount box */
+}
+
+.cta-title {
+  color: var(--onyx); /* Set text color for the CTA title */
+  font-size: var(--fs-5); /* Set font size for the CTA title */
+  text-transform: capitalize; /* Capitalize the title text */
+  margin-bottom: 5px; /* Add space below the title */
+}
+
+.cta-text {
+  color: var(--sonic-silver); /* Set text color for the CTA description */
+  font-size: var(--fs-7); /* Set font size for the CTA description */
+  margin-bottom: 5px; /* Add space below the description */
+}
+
+.cta-btn {
+  font-size: var(--fs-9); /* Set font size for the CTA button */
+  color: var(--sonic-silver); /* Set button text color */
+  text-transform: uppercase; /* Capitalize the button text */
+  font-weight: var(--weight-700); /* Set font weight to bold */
+  margin: auto; /* Center the button */
+}
+
+/* ----------------------------SERVICE SECTION---------------------------- */
+
+.service-container {
+  display: -webkit-box; /* Old webkit flexbox model for compatibility */
+  display: -webkit-flex; /* Modern webkit flexbox model for compatibility */
+  display: -ms-flexbox; /* Flexbox for IE/Edge */
+  display: flex; /* Set flexbox display model */
+  -webkit-box-pack: center; /* Center items horizontally in webkit browsers */
+  -webkit-justify-content: center; /* Center items horizontally in webkit browsers */
+  -ms-flex-pack: center; /* Center items horizontally in IE/Edge */
+  justify-content: center; /* Center items horizontally */
+  -webkit-box-align: center; /* Align items vertically in webkit browsers */
+  -webkit-align-items: center; /* Align items vertically in webkit browsers */
+  -ms-flex-align: center; /* Align items vertically in IE/Edge */
+  align-items: center; /* Align items vertically */
+  -webkit-flex-wrap: wrap; /* Allow wrapping of flex items in webkit browsers */
+  -ms-flex-wrap: wrap; /* Allow wrapping of flex items in IE/Edge */
+  flex-wrap: wrap; /* Allow wrapping of flex items */
+  gap: 30px; /* Add space between service items */
+  padding: 30px 15px; /* Add padding around the service container */
+  border: 1px solid var(--cultured); /* Add border around the service container */
+  -webkit-border-radius: var(
+    --border-radius-md
+  ); /* Set rounded corners for the container in webkit browsers */
+  border-radius: var(
+    --border-radius-md
+  ); /* Set rounded corners for the container */
+}
+
+.service-item {
+  min-width: 190px; /* Set a minimum width for each service item */
+  display: -webkit-box; /* Old webkit flexbox model for compatibility */
+  display: -webkit-flex; /* Modern webkit flexbox model for compatibility */
+  display: -ms-flexbox; /* Flexbox for IE/Edge */
+  display: flex; /* Set flexbox display model */
+  -webkit-box-align: center; /* Align service item content vertically in webkit browsers */
+  -webkit-align-items: center; /* Align service item content vertically in webkit browsers */
+  -ms-flex-align: center; /* Align service item content vertically in IE/Edge */
+  align-items: center; /* Align service item content vertically */
+  gap: 15px; /* Add space between the icon and title/description */
+}
+
+.service-icon {
+  font-size: 35px; /* Set font size for the service icon */
+  color: var(--salmon-pink); /* Set initial color for the icon */
+  -webkit-transition: var(
+    --transition-timing
+  ); /* Smooth transition for color change in webkit browsers */
+  -o-transition: var(
+    --transition-timing
+  ); /* Smooth transition for color change in opera browsers */
+  transition: var(--transition-timing); /* Smooth transition for color change */
+}
+
+.service-icon ion-icon {
+  --ionicon-stroke-width: 25px; /* Set stroke width for ionicons */
+}
+
+.service-item:hover .service-icon {
+  color: var(--eerie-black); /* Change icon color on hover to eerie black */
+}
+
+.service-title {
+  color: var(--sonic-silver); /* Set title color for the service item */
+  font-size: var(--fs-7); /* Set font size for the title */
+  font-weight: var(--weight-600); /* Set font weight to semi-bold */
+  text-transform: capitalize; /* Capitalize the service title */
+  margin-bottom: 5px; /* Add space below the title */
+}
+
+.service-desc {
+  color: var(--sonic-silver); /* Set color for service description */
+  font-size: var(--fs-9); /* Set font size for the service description */
+}
+
+/* ----------------------------BLOG SECTION---------------------------- */
+
+.blog {
+  margin-bottom: 30px; /* Add space below the blog section */
+}
+
+.blog-container {
+  display: -webkit-box; /* Old webkit flexbox model for compatibility */
+  display: -webkit-flex; /* Modern webkit flexbox model for compatibility */
+  display: -ms-flexbox; /* Flexbox for IE/Edge */
+  display: flex; /* Set flexbox display model */
+  -webkit-box-align: start; /* Align items to the start of the container in webkit browsers */
+  -webkit-align-items: flex-start; /* Align items to the start in webkit browsers */
+  -ms-flex-align: start; /* Align items to the start in IE/Edge */
+  align-items: flex-start; /* Align items to the start */
+  gap: 15px; /* Add space between the blog items */
+  overflow-x: auto; /* Enable horizontal scrolling for blog container */
+  overscroll-behavior-inline: contain; /* Prevent overscroll behavior */
+  -webkit-scroll-snap-type: inline mandatory; /* Snap scroll behavior in webkit browsers */
+  -ms-scroll-snap-type: inline mandatory; /* Snap scroll behavior in IE/Edge */
+  scroll-snap-type: inline mandatory; /* Snap scroll behavior */
+}
+
+.blog-card {
+  min-width: 100%; /* Set minimum width of each blog card */
+  scroll-snap-align: start; /* Align each blog card at the start of the scroll */
+}
+
+.blog-banner {
+  width: 100%; /* Make blog banner take up the full width */
+  -webkit-border-radius: var(
+    --border-radius-md
+  ); /* Set rounded corners for blog banner in webkit browsers */
+  border-radius: var(
+    --border-radius-md
+  ); /* Set rounded corners for blog banner */
+  margin-bottom: 20px; /* Add space below the blog banner */
+}
+
+.blog-category {
+  width: -webkit-max-content; /* Set width to content size in webkit browsers */
+  width: -moz-max-content; /* Set width to content size in firefox */
+  width: max-content; /* Set width to content size */
+  color: var(--salmon-pink); /* Set color for blog category */
+  font-size: var(--fs-8); /* Set font size for the category */
+}
+
+.blog-title {
+  color: var(--eerie-black); /* Set color for blog title */
+  font-size: var(--fs-5); /* Set font size for blog title */
+  font-weight: var(--weight-600); /* Set font weight to semi-bold for title */
+  line-height: 1.4; /* Set line height for title */
+  margin-bottom: 5px; /* Add space below the title */
+  -webkit-transition: var(
+    --transition-timing
+  ); /* Smooth transition for title hover effect in webkit browsers */
+  -o-transition: var(
+    --transition-timing
+  ); /* Smooth transition for title hover effect in opera browsers */
+  transition: var(
+    --transition-timing
+  ); /* Smooth transition for title hover effect */
+}
+
+.blog-title:hover {
+  color: var(--salmon-pink); /* Change title color to salmon pink on hover */
+}
+
+.blog-meta {
+  color: var(--sonic-silver); /* Set color for blog meta information */
+  font-size: var(--fs-7); /* Set font size for blog meta */
+}
+
+.blog-meta cite {
+  font-style: normal; /* Set font style of the cite element to normal */
+  color: var(--davys-gray); /* Set color for the cite element */
+}
+
+/* ----------------------------FOOTER SECTION---------------------------- */
+
+footer {
+  /* Style for footer element */
+  background: var(--eerie-black); /* Set the background color of the footer */
+  padding: 30px 0; /* Add padding to top and bottom of the footer */
+}
+
+.footer-category {
+  /* Style for category section inside the footer */
+  margin-bottom: 30px; /* Add space below each category */
+  padding-bottom: 15px; /* Add space below the title */
+  border-bottom: 1px solid var(--onyx); /* Add a border at the bottom of the category */
+}
+
+.footer-category-title {
+  /* Style for the title of each category */
+  color: var(--salmon-pink); /* Set the text color to salmon pink */
+  font-size: var(--fs-6); /* Set the font size using a custom property */
+  font-weight: var(--weight-600); /* Set the font weight to 600 */
+  text-transform: uppercase; /* Transform text to uppercase */
+  margin-bottom: 15px; /* Add space below the title */
+}
+
+.footer-category-box {
+  /* Style for the container of category items */
+  display: -webkit-box; /* Use flexbox with webkit prefix */
+  display: -webkit-flex; /* Use flexbox with webkit prefix */
+  display: -ms-flexbox; /* Use flexbox with ms prefix */
+  display: flex; /* Use standard flexbox */
+  -webkit-flex-wrap: wrap; /* Allow flex items to wrap */
+  -ms-flex-wrap: wrap; /* Allow flex items to wrap with ms prefix */
+  flex-wrap: wrap; /* Allow flex items to wrap */
+  -webkit-box-pack: start; /* Align items to start (left) */
+  -webkit-justify-content: flex-start; /* Align items to start (left) */
+  -ms-flex-pack: start; /* Align items to start (left) with ms prefix */
+  justify-content: flex-start; /* Align items to start (left) */
+  -webkit-box-align: center; /* Align items to center vertically */
+  -webkit-align-items: center; /* Align items to center vertically with webkit prefix */
+  -ms-flex-align: center; /* Align items to center vertically with ms prefix */
+  align-items: center; /* Align items to center vertically */
+  -webkit-column-gap: 20px; /* Set column gap with webkit prefix */
+  -moz-column-gap: 20px; /* Set column gap with moz prefix */
+  column-gap: 20px; /* Set the column gap between flex items */
+  row-gap: 3px; /* Set the row gap between flex items */
+  margin-bottom: 15px; /* Add space below the category items */
+}
+
+.category-box-title {
+  /* Style for the title of each category box */
+  color: var(--spanish-gray); /* Set the color to spanish gray */
+  font-size: var(--fs-8); /* Set the font size using a custom property */
+  font-weight: var(--weight-600); /* Set the font weight to 600 */
+  text-transform: uppercase; /* Transform the text to uppercase */
+}
+
+.footer-category-link {
+  /* Style for links inside the footer category */
+  position: relative; /* Set the position to relative */
+  color: var(--sonic-silver); /* Set the text color */
+  font-size: var(--fs-7); /* Set the font size using a custom property */
+  text-transform: capitalize; /* Capitalize the first letter of each word */
+  -webkit-transition: var(
+    --transition-timing
+  ); /* Set the transition timing with webkit prefix */
+  -o-transition: var(
+    --transition-timing
+  ); /* Set the transition timing with o prefix */
+  transition: var(--transition-timing); /* Set the transition timing */
+}
+
+.footer-category-link:hover {
+  /* Style for hover state of footer category link */
+  color: var(
+    --spanish-gray
+  ); /* Change text color to spanish gray when hovered */
+}
+
+.footer-category-link:not(:last-child)::after {
+  /* Add an after pseudo-element to all links except the last one */
+  position: absolute; /* Position it absolutely */
+  content: ""; /* Set content to an empty string */
+  top: 3px; /* Position it 3px from the top */
+  right: -10px; /* Position it 10px to the right */
+  background: var(--sonic-silver); /* Set the background color */
+  width: 1px; /* Set the width to 1px */
+  height: 15px; /* Set the height to 15px */
+}
+
+/* ----------FOOTER NAVIGATION SECTION---------- */
+
+.footer-nav {
+  /* Style for the footer navigation section */
+  border-bottom: 1px solid var(--onyx); /* Add a bottom border */
+  padding-bottom: 30px; /* Add padding at the bottom */
+  margin-bottom: 30px; /* Add margin at the bottom */
+}
+
+.footer-nav-list:not(:last-child) {
+  /* Style for nav list items except the last one */
+  margin-bottom: 20px; /* Add space below each nav item */
+}
+
+.footer-nav .nav-title {
+  /* Style for the title inside footer navigation */
+  position: relative; /* Set the position to relative */
+  color: var(--white); /* Set the color to white */
+  font-size: var(--fs-7); /* Set the font size */
+  text-transform: uppercase; /* Set the text to uppercase */
+  margin-bottom: 15px; /* Add space below the title */
+  padding-bottom: 5px; /* Add space below the padding */
+}
+
+.footer-nav .nav-title::before {
+  /* Add a before pseudo-element to the nav title */
+  content: ""; /* Set content to an empty string */
+  position: absolute; /* Set the position to absolute */
+  bottom: 0; /* Position it at the bottom */
+  left: 0; /* Position it to the left */
+  background: var(--salmon-pink); /* Set the background color */
+  width: 60px; /* Set the width to 60px */
+  height: 1px; /* Set the height to 1px */
+}
+
+.footer-nav-item {
+  /* Style for footer navigation items */
+  padding: 3px 0; /* Add padding to the top and bottom */
+}
+
+.footer-nav-link, /* Style for the footer navigation links */
+.footer-nav-item .content {
+  /* Style for content inside the footer navigation item */
+  width: -webkit-max-content; /* Set width to fit content for webkit prefix */
+  width: -moz-max-content; /* Set width to fit content for moz prefix */
+  width: max-content; /* Set width to fit content */
+  color: var(--sonic-silver); /* Set text color */
+  font-size: var(--fs-7); /* Set font size */
+  text-transform: capitalize; /* Capitalize the first letter of each word */
+  -webkit-transition: var(
+    --transition-timing
+  ); /* Set transition timing for webkit */
+  -o-transition: var(
+    --transition-timing
+  ); /* Set transition timing for o prefix */
+  transition: var(--transition-timing); /* Set transition timing */
+}
+
+.footer-nav-link:hover {
+  /* Hover state for footer navigation link */
+  color: var(--salmon-pink); /* Change color to salmon pink on hover */
+}
+
+.footer-nav-item.flex {
+  /* Style for footer navigation items with flex class */
+  display: -webkit-box; /* Use flexbox with webkit prefix */
+  display: -webkit-flex; /* Use flexbox with webkit prefix */
+  display: -ms-flexbox; /* Use flexbox with ms prefix */
+  display: flex; /* Use standard flexbox */
+  -webkit-box-align: start; /* Align items to start (left) */
+  -webkit-align-items: flex-start; /* Align items to start (left) */
+  -ms-flex-align: start; /* Align items to start (left) with ms prefix */
+  align-items: flex-start; /* Align items to start (left) */
+  gap: 10px; /* Add a gap between flex items */
+}
+
+.footer-nav-item .content {
+  /* Style for the content inside footer navigation item */
+  font-style: normal; /* Set font style to normal */
+  margin-bottom: 5px; /* Add space below the content */
+}
+
+.footer-nav-item .icon-box {
+  /* Style for the icon box inside footer navigation item */
+  color: var(--sonic-silver); /* Set icon color */
+  font-size: 25px; /* Set font size of the icon */
+}
+
+.footer-nav-item .icon-box ion-icon {
+  /* Style for ion icons inside footer navigation item */
+  --ionicon-stroke-width: 30px; /* Set the stroke width of the ion icon */
+}
+
+.footer-nav .social-link {
+  /* Style for social media links in the footer */
+  display: -webkit-box; /* Use flexbox with webkit prefix */
+  display: -webkit-flex; /* Use flexbox with webkit prefix */
+  display: -ms-flexbox; /* Use flexbox with ms prefix */
+  display: flex; /* Use standard flexbox */
+  -webkit-box-pack: start; /* Align items to start (left) */
+  -webkit-justify-content: flex-start; /* Align items to start (left) */
+  -ms-flex-pack: start; /* Align items to start (left) with ms prefix */
+  justify-content: flex-start; /* Align items to start (left) */
+  -webkit-box-align: center; /* Align items to center vertically */
+  -webkit-align-items: center; /* Align items to center vertically with webkit prefix */
+  -ms-flex-align: center; /* Align items to center vertically with ms prefix */
+  align-items: center; /* Align items to center vertically */
+  gap: 10px; /* Add a gap between items */
+}
+
+.social-link .footer-nav-link {
+  /* Style for the social media links in the footer */
+  font-size: 25px; /* Set the font size of the social media links */
+}
+
+.footer-bottom {
+  /* Style for the footer bottom section */
+  margin-bottom: 50px; /* Add space at the bottom */
+  text-align: center; /* Center align the text */
+}
+
+.payment-img {
+  /* Style for the payment image inside the footer */
+  max-width: 335px; /* Set the maximum width of the payment image */
+  width: 100%; /* Set the width to 100% */
+  margin: auto; /* Center align the image */
+  margin-bottom: 15px; /* Add space below the image */
+}
+
+.copyright {
+  /* Style for copyright text */
+  color: var(--sonic-silver); /* Set the text color */
+  font-size: var(--fs-8); /* Set the font size */
+  font-weight: var(--weight-500); /* Set the font weight */
+  text-transform: capitalize; /* Capitalize the first letter of each word */
+  letter-spacing: 1.2px; /* Add letter spacing */
+}
+
+.copyright a {
+  /* Style for links inside copyright */
+  display: inline; /* Display links inline */
+  color: inherit; /* Inherit color from parent */
+}
+
+/* --------------------------SCROLL UP ARROW---------------------------- */
+
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -50%;
+  background-color: #ff8f9c;
+  border-radius: 0.2rem;
+  padding: 6px;
+  display: inline-flex;
+  color: var(--eerie-black);
+  font-size: 1.25rem;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  transition: bottom 0.5s, transform 0.5s;
+  z-index: 10;
+}
+
+.scrollup:hover {
+  transform: translateY(-0.25rem);
+}
+
+/* Show Scroll Up */
+
+.show-scroll {
+  bottom: 4rem;
+}
+
+/* ----------------------------RESPONSIVE DESIGN---------------------------- */
+
+@media (min-width: 480px) {
+  /* Media query for screens larger than 480px */
+
+  :root {
+    /* Root selector for custom properties */
+
+    --fs-1: 1.875rem; /* Set font size for --fs-1 property */
+  }
+
+  /* ----------HEADER---------- */
+
+  .header-top {
+    /* Style for the top section of the header */
+    display: block; /* Set display to block */
+    padding: 10px 0; /* Add padding to top and bottom */
+    border-bottom: 1px solid var(--cultured); /* Add a border at the bottom */
+  }
+
+  .header-social-container,
+  .header-top-actions {
+    /* Hide social media and actions in header */
+    display: none; /* Hide the elements */
+  }
+
+  .header-alert-news {
+    /* Style for the alert news section in the header */
+    color: var(--sonic-silver); /* Set text color */
+    font-size: var(--fs-9); /* Set font size */
+    text-transform: uppercase; /* Set text to uppercase */
+  }
+
+  .header-alert-news b {
+    /* Style for bold text inside the alert news */
+    font-weight: var(--weight-500); /* Set font weight */
+  }
+
+  .header-main {
+    /* Style for the main section of the header */
+    padding: 25px 0; /* Add padding to top and bottom */
+  }
+
+  .mobile-bottom-navigation {
+    /* Style for the bottom navigation on mobile */
+    -webkit-border-top-left-radius: var(
+      --border-radius-md
+    ); /* Round the top-left corner */
+    border-top-left-radius: var(
+      --border-radius-md
+    ); /* Round the top-left corner */
+    -webkit-border-top-right-radius: var(
+      --border-radius-md
+    ); /* Round the top-right corner */
+    border-top-right-radius: var(
+      --border-radius-md
+    ); /* Round the top-right corner */
+  }
+
+  /* ----------BANNER---------- */
+
+  .slider-item {
+    /* Style for the banner slider items */
+    aspect-ratio: 5 / 3; /* Set aspect ratio */
+  }
+
+  .banner-content {
+    /* Style for the content inside the banner */
+    top: 50%; /* Position content at 50% from the top */
+    right: auto; /* Set right to auto */
+    bottom: auto; /* Set bottom to auto */
+    -webkit-transform: translateY(
+      -50%
+    ); /* Center content vertically with webkit prefix */
+    -ms-transform: translateY(
+      -50%
+    ); /* Center content vertically with ms prefix */
+    transform: translateY(-50%); /* Center content vertically */
+    max-width: 320px; /* Set max-width for content */
+  }
+
+  .banner-subtitle {
+    /* Style for the subtitle in the banner */
+    --fs-7: 1rem; /* Set font size for subtitle */
+  }
+
+  .banner-text {
+    /* Style for the text in the banner */
+    display: block; /* Display as block */
+    color: var(--sonic-silver); /* Set text color */
+    font-size: var(--fs-7); /* Set font size */
+    font-weight: var(--weight-500); /* Set font weight */
+    margin-bottom: 10px; /* Add space below the text */
+  }
+
+  .banner-text b {
+    /* Style for bold text inside the banner */
+    font-size: var(--fs-2); /* Set font size for bold text */
+  }
+
+  .banner-btn {
+    /* Style for the button inside the banner */
+    padding: 7px 20px; /* Add padding to the button */
+  }
+
+  /* ----------PRODUCT SECTION---------- */
+
+  .product-grid {
+    /* Style for the product grid */
+    -ms-grid-columns: 1fr 30px 1fr; /* Set columns for ms grid */
+    grid-template-columns: 1fr 1fr; /* Set columns for standard grid */
+    gap: 30px; /* Set the gap between grid items */
+  }
+
+  /* ----------CALL TO ACTION---------- */
+
+  .cta-content {
+    /* Style for the CTA content */
+    padding: 40px; /* Add padding to the CTA */
+  }
+
+  .cta-content .discount {
+    /* Style for the discount section in CTA */
+    --fs-11: 0.875rem; /* Set font size for discount text */
+    padding: 5px 10px; /* Add padding to discount text */
+  }
+
+  .cta-title {
+    /* Style for the CTA title */
+    --fs-5: 1.5rem; /* Set font size for the title */
+  }
+
+  .cta-text {
+    /* Style for the CTA text */
+    --fs-7: 1rem; /* Set font size for the text */
+  }
+
+  .cta-btn {
+    /* Style for the CTA button */
+    --fs-9: 1rem; /* Set font size for the button */
+  }
+
+  /* ----------FOOTER---------- */
+
+  .copyright {
+    /* Style for copyright section */
+    --fs-8: 0.875rem; /* Set font size for copyright */
+  }
+}
+
+@media (min-width: 570px) {
+  /* Media query for screens larger than 570px */
+
+  /* ----------HEADER SECTION---------- */
+
+  .header-top .container, /* Style for the container inside header-top */
+  .header-main .container {
+    /* Style for the container inside header-main */
+    display: -webkit-box; /* Use flexbox with webkit prefix */
+    display: -webkit-flex; /* Use flexbox with webkit prefix */
+    display: -ms-flexbox; /* Use flexbox with ms prefix */
+    display: flex; /* Use standard flexbox */
+    -webkit-box-pack: justify; /* Justify content to space out */
+    -webkit-justify-content: space-between; /* Space out content */
+    -ms-flex-pack: justify; /* Space out content with ms prefix */
+    justify-content: space-between; /* Space out content */
+    -webkit-box-align: center; /* Align items to the center vertically */
+    -webkit-align-items: center; /* Align items to center vertically with webkit */
+    -ms-flex-align: center; /* Align items to center vertically with ms prefix */
+    align-items: center; /* Align items to center vertically */
+  }
+
+  .header-logo {
+    /* Style for the logo inside the header */
+    margin-bottom: 0; /* Remove bottom margin */
+  }
+
+  .header-top-actions {
+    /* Style for header actions */
+    display: -webkit-box; /* Use flexbox with webkit prefix */
+    display: -webkit-flex; /* Use flexbox with webkit prefix */
+    display: -ms-flexbox; /* Use flexbox with ms prefix */
+    display: flex; /* Use standard flexbox */
+    -webkit-box-align: center; /* Align items to center vertically */
+    -webkit-align-items: center; /* Align items to center vertically with webkit prefix */
+    -ms-flex-align: center; /* Align items to center vertically with ms prefix */
+    align-items: center; /* Align items to center vertically */
+    gap: 10px; /* Add gap between items */
+  }
+
+  .header-top-actions select {
+    /* Style for the select dropdown inside header actions */
+    border: none; /* Remove border */
+    display: block; /* Display as block */
+    min-width: 80px; /* Set a minimum width */
+    padding: 5px 0; /* Add padding to the top and bottom */
+    font: inherit; /* Inherit the font */
+    color: var(--sonic-silver); /* Set text color */
+    font-size: var(--fs-8); /* Set font size */
+    text-transform: uppercase; /* Set text to uppercase */
+    cursor: pointer; /* Set cursor to pointer on hover */
+    -webkit-transition: var(
+      --transition-timing
+    ); /* Add transition for webkit */
+    -o-transition: var(--transition-timing); /* Add transition for o prefix */
+    transition: var(--transition-timing); /* Add standard transition */
+  }
+
+  .header-top-actions select:hover {
+    /* Hover state for the select dropdown */
+    color: var(--eerie-black); /* Change color to eerie black on hover */
+  }
+
+  .header-search-container {
+    /* Style for the search container inside header */
+    min-width: 300px; /* Set minimum width */
+  }
+
+  /* ----------BANNER---------- */
+
+  .slider-item {
+    /* Style for banner slider item */
+    aspect-ratio: 4 / 2; /* Set aspect ratio for slider item */
+  }
+
+  .banner-content {
+    /* Style for the content inside the banner */
+    background: none; /* Remove background */
+  }
+
+  /* ----------CATEGORY---------- */
+
+  .category-item-container {
+    /* Style for the category item container */
+    gap: 30px; /* Add gap between items */
+  }
+
+  .category-item {
+    /* Style for individual category item */
+    min-width: -webkit-calc(
+      50% - 15px
+    ); /* Set minimum width with webkit prefix */
+    min-width: calc(50% - 15px); /* Set minimum width */
+  }
+
+  /* ----------PRODUCT---------- */
+
+  .product-minimal .showcase-container {
+    /* Style for the showcase container in minimal products */
+    min-width: 50%; /* Set minimum width */
+  }
+
+  .product-featured .showcase-img {
+    /* Style for showcase image inside featured products */
+    max-width: 450px; /* Set max width for the image */
+    margin: auto; /* Center align the image */
+  }
+
+  .product-featured .countdown {
+    /* Style for the countdown inside featured products */
+    gap: 20px; /* Add gap between items */
+  }
+
+  /* ----------CALL TO ACTION---------- */
+
+  .cta-container {
+    /* Style for the CTA container */
+    aspect-ratio: 6 / 5; /* Set aspect ratio */
+  }
+
+  /* ----------BLOG---------- */
+
+  .blog-container {
+    /* Style for the blog container */
+    gap: 30px; /* Add gap between items */
+  }
+
+  .blog-card {
+    /* Style for individual blog cards */
+    min-width: -webkit-calc(
+      50% - 15px
+    ); /* Set minimum width with webkit prefix */
+    min-width: calc(50% - 15px); /* Set minimum width */
+  }
+}
+
+@media (min-width: 768px) {
+  /* Target screens larger than 768px */
+
+  :root {
+    /* Define custom CSS variables */
+
+    --fs-1: 2.375rem; /* Set a custom font size for --fs-1 variable */
+  }
+
+  /* ----------BASE---------- */
+
+  html {
+    /* Base styles for the HTML element */
+    font-size: 17px; /* Set the base font size to 17px */
+  }
+
+  /* ----------REUSED---------- */
+
+  .container {
+    /* Style for container class */
+    max-width: 750px; /* Set maximum width of the container to 750px */
+    margin: auto; /* Center the container horizontally */
+  }
+
+  /* ----------MODAL---------- */
+
+  .modal-content {
+    /* Style for modal content */
+    display: -webkit-box; /* Fallback for older browsers with Flexbox */
+    display: -webkit-flex; /* Fallback for older Webkit-based browsers */
+    display: -ms-flexbox; /* Fallback for older IE browsers */
+    display: flex; /* Enable flexbox for modern browsers */
+    -webkit-box-align: center; /* Align items vertically in Webkit browsers */
+    -webkit-align-items: center; /* Align items vertically in Webkit browsers */
+    -ms-flex-align: center; /* Align items vertically in IE */
+    align-items: center; /* Align items vertically in modern browsers */
+    max-width: 750px; /* Set maximum width of the modal to 750px */
+    width: -webkit-fit-content; /* Set width to fit content in Webkit browsers */
+    width: -moz-fit-content; /* Set width to fit content in Mozilla browsers */
+    width: fit-content; /* Set width to fit content in modern browsers */
+  }
+
+  .newsletter-img {
+    /* Style for the newsletter image */
+    display: block; /* Make the image a block-level element */
+  }
+
+  .newsletter {
+    /* Style for the newsletter section */
+    text-align: left; /* Align text to the left */
+  }
+
+  /* ----------HEADER SECTION---------- */
+
+  .header-main .container {
+    /* Style for the main header container */
+    gap: 80px; /* Set 80px gap between items in the header container */
+  }
+
+  .header-search-container {
+    /* Style for the search container in the header */
+    -webkit-box-flex: 1; /* Fallback for Webkit browsers to allow flex-grow */
+    -webkit-flex-grow: 1; /* Fallback for Webkit browsers to allow flex-grow */
+    -ms-flex-positive: 1; /* Fallback for IE to allow flex-grow */
+    flex-grow: 1; /* Allow the search container to grow and take up available space */
+  }
+
+  /* ----------BANNER---------- */
+
+  .slider-item {
+    /* Style for individual banner items */
+    aspect-ratio: auto; /* Allow the aspect ratio to adjust automatically */
+    height: 350px; /* Set a fixed height for the slider items */
+  }
+
+  .banner-content {
+    /* Style for the banner content */
+    max-width: 380px; /* Limit the width of the banner content to 380px */
+  }
+
+  .banner-subtitle {
+    /* Style for the banner subtitle */
+    --fs-7: 1.25rem; /* Set font size for the subtitle */
+  }
+
+  .banner-text {
+    /* Style for the banner text */
+    --fs-7: 1.125rem; /* Set font size for the banner text */
+  }
+
+  .banner-text b {
+    /* Style for bold text inside the banner */
+    --fs-2: 1.875rem; /* Set a larger font size for bold text */
+  }
+
+  .banner-btn {
+    /* Style for the banner button */
+    --fs-11: 0.75rem; /* Set a smaller font size for the banner button */
+  }
+
+  /* ----------CATEGORY---------- */
+
+  .category-img-box {
+    /* Style for category image box */
+    padding: 20px; /* Add padding inside the category image box */
+  }
+
+  /* ----------PRODUCT---------- */
+
+  .product-minimal {
+    /* Style for the minimal product grid */
+    display: -webkit-box; /* Fallback for Webkit browsers to enable flexbox */
+    display: -webkit-flex; /* Fallback for Webkit browsers to enable flexbox */
+    display: -ms-flexbox; /* Fallback for IE browsers to enable flexbox */
+    display: flex; /* Enable flexbox layout */
+    -webkit-flex-wrap: wrap; /* Allow items to wrap in Webkit browsers */
+    -ms-flex-wrap: wrap; /* Allow items to wrap in IE browsers */
+    flex-wrap: wrap; /* Allow items to wrap in modern browsers */
+    -webkit-box-pack: center; /* Center items horizontally in Webkit browsers */
+    -webkit-justify-content: center; /* Center items horizontally in Webkit browsers */
+    -ms-flex-pack: center; /* Center items horizontally in IE browsers */
+    justify-content: center; /* Center items horizontally in modern browsers */
+    gap: 20px; /* Set a 20px gap between items */
+  }
+
+  .product-minimal .product-showcase {
+    /* Style for product showcases in the grid */
+    min-width: -webkit-calc(
+      50% - 10px
+    ); /* Set minimum width for product showcases in Webkit browsers */
+    min-width: calc(50% - 10px); /* Set minimum width for product showcases */
+    width: -webkit-calc(
+      50% - 10px
+    ); /* Set width for product showcases in Webkit browsers */
+    width: calc(50% - 10px); /* Set width for product showcases */
+  }
+
+  .product-minimal .showcase-container {
+    /* Style for showcase container */
+    min-width: 100%; /* Set minimum width to 100% */
+  }
+
+  .product-featured .showcase {
+    /* Style for featured product showcase */
+    display: -webkit-box; /* Fallback for Webkit browsers to enable flexbox */
+    display: -webkit-flex; /* Fallback for Webkit browsers to enable flexbox */
+    display: -ms-flexbox; /* Fallback for IE browsers to enable flexbox */
+    display: flex; /* Enable flexbox layout */
+    -webkit-box-pack: center; /* Center items horizontally in Webkit browsers */
+    -webkit-justify-content: center; /* Center items horizontally in Webkit browsers */
+    -ms-flex-pack: center; /* Center items horizontally in IE browsers */
+    justify-content: center; /* Center items horizontally in modern browsers */
+    -webkit-box-align: center; /* Align items vertically in Webkit browsers */
+    -webkit-align-items: center; /* Align items vertically in Webkit browsers */
+    -ms-flex-align: center; /* Align items vertically in IE browsers */
+    align-items: center; /* Align items vertically in modern browsers */
+    gap: 20px; /* Set a 20px gap between items */
+  }
+
+  .product-featured .showcase-img {
+    /* Style for featured product images */
+    max-width: -webkit-fit-content; /* Set max width to fit content in Webkit browsers */
+    max-width: -moz-fit-content; /* Set max width to fit content in Mozilla browsers */
+    max-width: fit-content; /* Set max width to fit content in modern browsers */
+  }
+
+  .product-featured .showcase-content {
+    /* Style for featured product content */
+    margin-top: 0; /* Remove top margin */
+    min-width: -webkit-calc(
+      100% - 345px
+    ); /* Set minimum width for content in Webkit browsers */
+    min-width: calc(100% - 345px); /* Set minimum width for content */
+  }
+
+  /* ----------FOOTER---------- */
+
+  .footer-nav .container {
+    /* Style for the footer navigation container */
+    display: -webkit-box; /* Fallback for Webkit browsers to enable flexbox */
+    display: -webkit-flex; /* Fallback for Webkit browsers to enable flexbox */
+    display: -ms-flexbox; /* Fallback for IE browsers to enable flexbox */
+    display: flex; /* Enable flexbox layout */
+    -webkit-flex-wrap: wrap; /* Allow items to wrap in Webkit browsers */
+    -ms-flex-wrap: wrap; /* Allow items to wrap in IE browsers */
+    flex-wrap: wrap; /* Allow items to wrap in modern browsers */
+    row-gap: 50px; /* Set a 50px gap between rows */
+    -webkit-column-gap: 20px; /* Set a 20px gap between columns in Webkit browsers */
+    -moz-column-gap: 20px; /* Set a 20px gap between columns in Mozilla browsers */
+    column-gap: 20px; /* Set a 20px gap between columns in modern browsers */
+  }
+
+  .footer-nav-list {
+    /* Style for each footer navigation list */
+    min-width: -webkit-calc(
+      33.33% - 15px
+    ); /* Set minimum width for list items in Webkit browsers */
+    min-width: calc(33.33% - 15px); /* Set minimum width for list items */
+    width: -webkit-calc(
+      33.33% - 15px
+    ); /* Set width for list items in Webkit browsers */
+    width: calc(33.33% - 15px); /* Set width for list items */
+    -webkit-box-flex: 1; /* Allow list items to flex in Webkit browsers */
+    -webkit-flex-grow: 1; /* Allow list items to grow in Webkit browsers */
+    -ms-flex-positive: 1; /* Allow list items to grow in IE browsers */
+    flex-grow: 1; /* Allow list items to grow in modern browsers */
+  }
+
+  .footer-nav-list:not(:last-child) {
+    /* Style for footer navigation lists except the last one */
+    margin-bottom: 0; /* Remove bottom margin for all lists except the last one */
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Media query for screens with a minimum width of 1024px */
+
+  :root {
+    /* Global root element for custom properties */
+
+    --fs-1: 2.625rem; /* Custom property for font size 1 */
+    --fs-2: 1.125rem; /* Custom property for font size 2 */
+  }
+
+  /* ----------REUSED---------- */
+
+  .container {
+    /* Container class with max-width */
+    max-width: 980px; /* Set maximum width of the container to 980px */
+  }
+
+  /* ----------NOTIFICATION TOAST---------- */
+
+  .notification-toast {
+    /* Notification toast styling */
+    bottom: 30px; /* Position toast 30px from the bottom */
+  }
+
+  /* ----------HEADER SECTION---------- */
+
+  .header-social-container {
+    /* Container for social media icons in header */
+    display: -webkit-box; /* Flexbox display for Webkit browsers */
+    display: -webkit-flex; /* Flexbox display for Webkit browsers */
+    display: -ms-flexbox; /* Flexbox display for MS browsers */
+    display: flex; /* Flexbox display for modern browsers */
+    -webkit-box-align: center; /* Align items vertically for Webkit browsers */
+    -webkit-align-items: center; /* Align items vertically for Webkit browsers */
+    -ms-flex-align: center; /* Align items vertically for MS browsers */
+    align-items: center; /* Align items vertically for modern browsers */
+    gap: 5px; /* Space between social links */
+  }
+
+  .header-social-container .social-link {
+    /* Styling for each social media link */
+    padding: 5px; /* Padding around social media link */
+    background: hsl(0, 0%, 95%); /* Background color of social media link */
+    -webkit-border-radius: var(
+      --border-radius-sm
+    ); /* Border radius for Webkit browsers */
+    border-radius: var(
+      --border-radius-sm
+    ); /* Border radius for modern browsers */
+    color: var(--sonic-silver); /* Color of the text */
+    -webkit-transition: var(
+      --transition-timing
+    ); /* Transition timing for Webkit browsers */
+    -o-transition: var(
+      --transition-timing
+    ); /* Transition timing for Opera browsers */
+    transition: var(
+      --transition-timing
+    ); /* Transition timing for modern browsers */
+  }
+
+  .header-social-container .social-link:hover {
+    /* Hover state for social media links */
+    background: var(--salmon-pink); /* Change background color on hover */
+    color: var(--white); /* Change text color on hover */
+  }
+
+  .header-user-actions {
+    /* Container for user action buttons in the header */
+    display: -webkit-box; /* Flexbox display for Webkit browsers */
+    display: -webkit-flex; /* Flexbox display for Webkit browsers */
+    display: -ms-flexbox; /* Flexbox display for MS browsers */
+    display: flex; /* Flexbox display for modern browsers */
+    -webkit-box-align: center; /* Align items vertically for Webkit browsers */
+    -webkit-align-items: center; /* Align items vertically for Webkit browsers */
+    -ms-flex-align: center; /* Align items vertically for MS browsers */
+    align-items: center; /* Align items vertically for modern browsers */
+    gap: 15px; /* Space between user action buttons */
+  }
+
+  .header-user-actions .action-btn {
+    /* Styling for action buttons in the header */
+    position: relative; /* Position relative for positioning the count */
+    font-size: 35px; /* Font size for the action button */
+    color: var(--onyx); /* Text color of the action button */
+    padding: 5px; /* Padding around the action button */
+  }
+
+  .header-user-actions .count {
+    /* Badge showing count near the action button */
+    position: absolute; /* Absolute positioning relative to the button */
+    top: -2px; /* Position the count slightly above the button */
+    right: -3px; /* Position the count slightly to the right of the button */
+    background: var(--bittersweet); /* Background color of the count badge */
+    color: var(--white); /* Text color of the count */
+    font-size: 12px; /* Font size for the count */
+    font-weight: var(--weight-500); /* Font weight for the count */
+    line-height: 1; /* Line height for the count */
+    padding: 2px 4px; /* Padding around the count */
+    -webkit-border-radius: 20px; /* Border radius for Webkit browsers */
+    border-radius: 20px; /* Border radius for modern browsers */
+  }
+
+  .desktop-navigation-menu {
+    /* Navigation menu for desktop view */
+    display: block; /* Display the navigation menu as a block */
+  }
+
+  .desktop-menu-category-list {
+    /* List of menu categories */
+    position: relative; /* Position the categories container */
+    display: -webkit-box; /* Flexbox display for Webkit browsers */
+    display: -webkit-flex; /* Flexbox display for Webkit browsers */
+    display: -ms-flexbox; /* Flexbox display for MS browsers */
+    display: flex; /* Flexbox display for modern browsers */
+    -webkit-box-pack: center; /* Center the content horizontally for Webkit browsers */
+    -webkit-justify-content: center; /* Center the content horizontally for Webkit browsers */
+    -ms-flex-pack: center; /* Center the content horizontally for MS browsers */
+    justify-content: center; /* Center the content horizontally for modern browsers */
+    -webkit-box-align: center; /* Align items vertically for Webkit browsers */
+    -webkit-align-items: center; /* Align items vertically for Webkit browsers */
+    -ms-flex-align: center; /* Align items vertically for MS browsers */
+    align-items: center; /* Align items vertically for modern browsers */
+    gap: 30px; /* Space between categories */
+  }
+
+  .desktop-menu-category-list .menu-category:not(:nth-child(2)) {
+    /* Exclude the second menu category from certain styles */
+    position: relative; /* Relative positioning for menu categories */
+  }
+
+  .desktop-menu-category-list .menu-category > .menu-title {
+    /* Title for each menu category */
+    position: relative; /* Position for the menu title */
+    color: var(--onyx); /* Text color for the menu title */
+    font-size: var(--fs-7); /* Font size for the menu title */
+    font-weight: var(--weight-600); /* Font weight for the menu title */
+    text-transform: uppercase; /* Uppercase text for the menu title */
+    padding: 15px 0; /* Vertical padding for the menu title */
+    -webkit-transition: var(
+      --transition-timing
+    ); /* Transition timing for Webkit browsers */
+    -o-transition: var(
+      --transition-timing
+    ); /* Transition timing for Opera browsers */
+    transition: var(
+      --transition-timing
+    ); /* Transition timing for modern browsers */
+  }
+
+  .desktop-menu-category-list .menu-category > .menu-title:hover {
+    /* Hover effect on the menu title */
+    color: var(--salmon-pink); /* Change text color on hover */
+  }
+
+  .desktop-menu-category-list .menu-category > .menu-title::after {
+    /* Underline effect for menu title on hover */
+    content: ""; /* Empty content for the pseudo-element */
+    position: absolute; /* Absolute position of the underline */
+    bottom: 0; /* Position the underline at the bottom of the title */
+    left: 0; /* Align the underline to the left */
+    width: 100%; /* Full width for the underline */
+    height: 2px; /* Height of the underline */
+    background: var(--salmon-pink); /* Color of the underline */
+    -webkit-transform: scaleX(
+      0
+    ); /* Initially hide the underline with a scale transformation for Webkit browsers */
+    -ms-transform: scaleX(
+      0
+    ); /* Initially hide the underline with a scale transformation for MS browsers */
+    transform: scaleX(
+      0
+    ); /* Initially hide the underline with a scale transformation for modern browsers */
+    -webkit-transform-origin: left; /* Set the transformation origin to the left for Webkit browsers */
+    -ms-transform-origin: left; /* Set the transformation origin to the left for MS browsers */
+    transform-origin: left; /* Set the transformation origin to the left for modern browsers */
+    -webkit-transition: var(
+      --transition-timing
+    ); /* Transition timing for Webkit browsers */
+    -o-transition: var(
+      --transition-timing
+    ); /* Transition timing for Opera browsers */
+    transition: var(
+      --transition-timing
+    ); /* Transition timing for modern browsers */
+  }
+
+  .desktop-menu-category-list .menu-category > .menu-title:hover::after {
+    /* Hover effect on the underline */
+    -webkit-transform: scaleX(
+      1
+    ); /* Show the underline with a scale transformation for Webkit browsers */
+    -ms-transform: scaleX(
+      1
+    ); /* Show the underline with a scale transformation for MS browsers */
+    transform: scaleX(
+      1
+    ); /* Show the underline with a scale transformation for modern browsers */
+  }
+
+  .dropdown-panel {
+    /* Dropdown panel that shows when hovering over a menu category */
+    position: absolute; /* Absolute positioning of the dropdown panel */
+    top: 100%; /* Position the dropdown below the menu category */
+    left: 0; /* Align the dropdown to the left */
+    background: var(--white); /* Background color for the dropdown */
+    width: 100%; /* Set the width to 100% */
+    display: -ms-grid; /* Grid display for MS browsers */
+    display: grid; /* Grid display for modern browsers */
+    -ms-grid-columns: 1fr 30px 1fr 30px 1fr 30px 1fr; /* Grid column configuration for MS browsers */
+    grid-template-columns: repeat(
+      4,
+      1fr
+    ); /* Grid column configuration for modern browsers */
+    gap: 30px; /* Space between grid items */
+    padding: 30px; /* Padding inside the dropdown */
+    border: 1px solid var(--cultured); /* Border color for the dropdown */
+    -webkit-box-shadow: 0 3px 5px hsla(0, 0%, 0%, 0.1); /* Box shadow for Webkit browsers */
+    box-shadow: 0 3px 5px hsla(0, 0%, 0%, 0.1); /* Box shadow for modern browsers */
+    -webkit-border-radius: var(
+      --border-radius-md
+    ); /* Border radius for Webkit browsers */
+    border-radius: var(
+      --border-radius-md
+    ); /* Border radius for modern browsers */
+    -webkit-transform: translateY(
+      50px
+    ); /* Initially translate the dropdown down for Webkit browsers */
+    -ms-transform: translateY(
+      50px
+    ); /* Initially translate the dropdown down for MS browsers */
+    transform: translateY(
+      50px
+    ); /* Initially translate the dropdown down for modern browsers */
+    opacity: 0; /* Set the initial opacity to 0 */
+    visibility: hidden; /* Hide the dropdown initially */
+    pointer-events: none; /* Disable pointer events initially */
+    -webkit-transition: var(
+      --transition-timing
+    ); /* Transition for Webkit browsers */
+    -o-transition: var(--transition-timing); /* Transition for Opera browsers */
+    transition: var(--transition-timing); /* Transition for modern browsers */
+    z-index: 5; /* Set z-index for stacking order */
+  }
+
+  .desktop-menu-category-list .menu-category:hover > .dropdown-panel {
+    /* Show dropdown panel when hovering over the menu category */
+    -webkit-transform: translateY(0); /* Reset translate for Webkit browsers */
+    -ms-transform: translateY(0); /* Reset translate for MS browsers */
+    transform: translateY(0); /* Reset translate for modern browsers */
+    opacity: 1; /* Set opacity to 1 */
+    visibility: visible; /* Make the dropdown visible */
+    pointer-events: all; /* Enable pointer events */
+  }
+
+  .dropdown-panel-list .menu-title a {
+    /* Links inside dropdown panel menu title */
+    color: var(--onyx); /* Color of the menu title links */
+    font-size: var(--fs-7); /* Font size of the menu title links */
+    font-weight: var(--weight-600); /* Font weight of the menu title links */
+    padding-bottom: 10px; /* Padding below the menu title link */
+    border-bottom: 1px solid var(--cultured); /* Border below the menu title link */
+    margin-bottom: 10px; /* Margin below the menu title link */
+  }
+
+  .panel-list-item a {
+    /* Styling for panel list item links */
+    color: var(--sonic-silver); /* Text color of the panel list links */
+    font-size: var(--fs-7); /* Font size of the panel list links */
+    text-transform: capitalize; /* Capitalize text for the links */
+    -webkit-transition: var(
+      --transition-timing
+    ); /* Transition for Webkit browsers */
+    -o-transition: var(--transition-timing); /* Transition for Opera browsers */
+    transition: var(--transition-timing); /* Transition for modern browsers */
+  }
+
+  .panel-list-item a:hover {
+    /* Hover effect for panel list item links */
+    color: var(--salmon-pink); /* Change color on hover */
+  }
+
+  .panel-list-item:not(:last-child) a {
+    /* Padding for panel list items except the last one */
+    padding: 4px 0; /* Vertical padding for the links */
+  }
+
+  .panel-list-item:last-child {
+    /* Margin for the last panel list item */
+    margin-top: 20px; /* Margin top for the last item */
+  }
+
+  .panel-list-item img {
+    /* Image inside panel list item */
+    width: 100%; /* Set image width to 100% */
+    height: auto; /* Maintain aspect ratio of the image */
+    -webkit-border-radius: var(
+      --border-radius-sm
+    ); /* Border radius for Webkit browsers */
+    border-radius: var(
+      --border-radius-sm
+    ); /* Border radius for modern browsers */
+  }
+
+  /* Dropdown List */
+  .dropdown-list {
+    position: absolute; /* Position the dropdown list absolutely relative to its parent */
+    top: 100%; /* Position it directly below the parent */
+    left: 0; /* Align it to the left of its parent */
+    width: 200px; /* Set the width of the dropdown */
+    background: var(
+      --white
+    ); /* Set the background color using a CSS variable */
+    padding: 20px 0; /* Add vertical padding of 20px */
+    -webkit-border-radius: var(
+      --border-radius-md
+    ); /* Border radius for webkit browsers */
+    border-radius: var(--border-radius-md); /* Apply border radius */
+    border: 1px solid var(--cultured); /* Set border with a light color */
+    -webkit-box-shadow: 0 3px 5px hsla(0, 0%, 0%, 0.1); /* Light shadow for webkit browsers */
+    box-shadow: 0 3px 5px hsla(0, 0%, 0%, 0.1); /* Apply a box shadow */
+    -webkit-transform: translateY(
+      50px
+    ); /* Translate dropdown 50px downward in webkit browsers */
+    -ms-transform: translateY(
+      50px
+    ); /* Translate dropdown 50px downward for older IE */
+    transform: translateY(50px); /* Translate dropdown 50px downward */
+    opacity: 0; /* Set the dropdown to be initially invisible */
+    visibility: hidden; /* Make the dropdown hidden */
+    pointer-events: none; /* Disable interaction with the dropdown */
+    -webkit-transition: var(
+      --transition-timing
+    ); /* Apply transition for webkit browsers */
+    -o-transition: var(
+      --transition-timing
+    ); /* Apply transition for older Opera browsers */
+    transition: var(
+      --transition-timing
+    ); /* Apply transition for all other browsers */
+    z-index: 5; /* Set z-index to ensure it is layered above other content */
+  }
+
+  /* Show the dropdown list when hovering over the menu category */
+  .desktop-menu-category-list .menu-category:hover > .dropdown-list {
+    -webkit-transform: translateY(
+      0
+    ); /* Reset translation for webkit browsers */
+    -ms-transform: translateY(0); /* Reset translation for older IE */
+    transform: translateY(0); /* Reset translation */
+    opacity: 1; /* Make the dropdown visible */
+    visibility: visible; /* Make the dropdown visible */
+    pointer-events: all; /* Enable interaction with the dropdown */
+  }
+
+  /* Style the links inside the dropdown items */
+  .dropdown-list .dropdown-item a {
+    color: var(--sonic-silver); /* Set the text color */
+    font-size: var(--fs-7); /* Set the font size */
+    text-transform: capitalize; /* Capitalize the first letter of each word */
+    padding: 4px 20px; /* Add padding around the links */
+    -webkit-transition: var(
+      --transition-timing
+    ); /* Apply transition for webkit browsers */
+    -o-transition: var(
+      --transition-timing
+    ); /* Apply transition for older Opera browsers */
+    transition: var(
+      --transition-timing
+    ); /* Apply transition for all other browsers */
+  }
+
+  /* Change color of the link when hovering over it */
+  .dropdown-list .dropdown-item a:hover {
+    color: var(--salmon-pink); /* Change text color to salmon pink on hover */
+  }
+
+  /* Hide mobile bottom navigation */
+  .mobile-bottom-navigation {
+    display: none; /* Hide mobile bottom navigation */
+  }
+
+  /* Banner section styling */
+  .banner {
+    margin-top: 0; /* Remove top margin */
+  }
+
+  /* Set the height of the slider items */
+  .slider-item {
+    height: 380px; /* Set a fixed height for slider items */
+  }
+
+  /* Position and style the banner content */
+  .banner-content {
+    left: 75px; /* Move the content 75px from the left */
+    max-width: 400px; /* Set a maximum width for the content */
+  }
+
+  /* Set the font size for the subtitle */
+  .banner-subtitle {
+    --fs-7: 1.625rem; /* Set a custom font size for the subtitle */
+  }
+
+  /* Set the font size for the main banner text */
+  .banner-text {
+    --fs-7: 1.375rem; /* Set a custom font size for the banner text */
+  }
+
+  /* Style the banner button */
+  .banner-btn {
+    --fs-11: 0.875rem; /* Set font size for the banner button */
+  }
+
+  /* Category item styling */
+  .category-item {
+    min-width: -webkit-calc(
+      33.33% - 20px
+    ); /* Set a minimum width for category items for webkit browsers */
+    min-width: calc(33.33% - 20px); /* Set a minimum width for category items */
+  }
+
+  /* Padding inside the category image box */
+  .category-img-box {
+    padding: 10px; /* Add padding inside the image box */
+  }
+
+  /* Product container styles */
+  .product-container .container {
+    position: relative; /* Position the container relatively */
+    display: -webkit-box; /* For webkit browsers, use flexbox */
+    display: -webkit-flex; /* For webkit browsers, use flexbox */
+    display: -ms-flexbox; /* For older versions of IE, use flexbox */
+    display: flex; /* Set the display property to flex */
+    -webkit-box-align: start; /* Align items to the start for webkit browsers */
+    -webkit-align-items: flex-start; /* Align items to the start for webkit browsers */
+    -ms-flex-align: start; /* Align items to the start for older IE */
+    align-items: flex-start; /* Align items to the start */
+    gap: 30px; /* Set a gap of 30px between flex items */
+    margin-bottom: 30px; /* Add a bottom margin to the container */
+  }
+
+  /* Sidebar styles */
+  .sidebar {
+    --fs-5: 0.941rem; /* Set the font size for sidebar items */
+    position: -webkit-sticky; /* Make the sidebar sticky for webkit browsers */
+    position: sticky; /* Make the sidebar sticky */
+    top: 30px; /* Set the top offset to 30px */
+    left: 0; /* Align the sidebar to the left */
+    padding: 0; /* Remove padding */
+    min-width: -webkit-calc(
+      25% - 15px
+    ); /* Set a minimum width for the sidebar for webkit browsers */
+    min-width: calc(25% - 15px); /* Set a minimum width for the sidebar */
+    margin-bottom: 30px; /* Add a bottom margin */
+    visibility: visible; /* Ensure the sidebar is visible */
+    overflow-y: auto; /* Enable vertical scrolling */
+    -ms-scroll-chaining: chained; /* Set scroll chaining for older IE */
+    overscroll-behavior: auto; /* Enable default overscroll behavior */
+    z-index: 0; /* Set the z-index of the sidebar */
+  }
+
+  /* Sidebar category styling */
+  .sidebar-category {
+    padding: 20px; /* Add padding inside the sidebar category */
+    margin-bottom: 30px; /* Add bottom margin to each category */
+    border: 1px solid var(--cultured); /* Add a border with a light color */
+    -webkit-border-radius: var(
+      --border-radius-md
+    ); /* Border radius for webkit browsers */
+    border-radius: var(--border-radius-md); /* Apply border radius */
+  }
+
+  /* Hide the sidebar close button */
+  .sidebar-close-btn {
+    display: none; /* Hide the close button */
+  }
+
+  /* Product box styling */
+  .product-box {
+    min-width: -webkit-calc(
+      75% - 15px
+    ); /* Set minimum width for product box for webkit browsers */
+    min-width: calc(75% - 15px); /* Set minimum width for product box */
+  }
+
+  /* Minimal product styling */
+  .product-minimal {
+    margin-bottom: 20px; /* Add bottom margin */
+  }
+
+  /* Product showcase layout in minimal products */
+  .product-minimal .product-showcase {
+    min-width: -webkit-calc(
+      33.33% - 14px
+    ); /* Set minimum width for product showcase for webkit browsers */
+    min-width: calc(33.33% - 14px); /* Set minimum width for product showcase */
+    width: -webkit-calc(33.33% - 14px); /* Set width for webkit browsers */
+    width: calc(33.33% - 14px); /* Set width */
+    -webkit-box-flex: 1; /* Allow the item to grow in webkit browsers */
+    -webkit-flex-grow: 1; /* Allow the item to grow in webkit browsers */
+    -ms-flex-positive: 1; /* Allow the item to grow in older IE */
+    flex-grow: 1; /* Allow the item to grow */
+  }
+
+  /* Layout of the showcase wrapper */
+  .product-minimal .showcase-wrapper {
+    gap: 10px; /* Add gap between items in the showcase wrapper */
+  }
+
+  /* Styling of the showcase container */
+  .product-minimal .showcase-container {
+    padding: 2px; /* Add padding inside the showcase container */
+  }
+
+  /* Countdown content styling for featured products */
+  .product-featured .countdown-content {
+    padding: 5px 10px; /* Add padding around countdown content */
+  }
+
+  /* Grid layout for products */
+  .product-grid {
+    /* -ms-grid-columns: (1fr) [3]; */
+    grid-template-columns: repeat(3, 1fr); /* Create a 3-column grid layout */
+  }
+
+  /* Testimonials, CTA & Services section */
+  .testimonials-box {
+    display: -webkit-box; /* Use flexbox for webkit browsers */
+    display: -webkit-flex; /* Use flexbox for webkit browsers */
+    display: -ms-flexbox; /* Use flexbox for older IE */
+    display: flex; /* Set the display to flex */
+    -webkit-flex-wrap: wrap; /* Allow wrapping of flex items in webkit browsers */
+    -ms-flex-wrap: wrap; /* Allow wrapping of flex items in older IE */
+    flex-wrap: wrap; /* Allow wrapping of flex items */
+    -webkit-box-align: stretch; /* Stretch items for webkit browsers */
+    -webkit-align-items: stretch; /* Stretch items for webkit browsers */
+    -ms-flex-align: stretch; /* Stretch items for older IE */
+    align-items: stretch; /* Stretch items */
+    gap: 30px; /* Set a gap of 30px between items */
+  }
+
+  /* Testimonial card styling */
+  .testimonial-card {
+    margin-bottom: 0; /* Remove bottom margin */
+  }
+
+  /* Testimonial and CTA container styling */
+  .testimonial,
+  .cta-container {
+    min-width: -webkit-calc(
+      50% - 15px
+    ); /* Set minimum width for testimonial and CTA container for webkit browsers */
+    min-width: calc(
+      50% - 15px
+    ); /* Set minimum width for testimonial and CTA container */
+    width: -webkit-calc(50% - 15px); /* Set width for webkit browsers */
+    width: calc(50% - 15px); /* Set width */
+    margin-bottom: 0; /* Remove bottom margin */
+  }
+
+  /* Service section styling */
+  .service {
+    width: 100%; /* Make the service section take up the full width */
+  }
+
+  /* Service container gap */
+  .service-container {
+    gap: 0; /* Remove gap inside the service container */
+  }
+
+  /* Service item layout */
+  .service-item {
+    -webkit-box-orient: vertical; /* Set flex direction for webkit browsers */
+    -webkit-box-direction: normal; /* Set flex direction for webkit browsers */
+    -webkit-flex-direction: column; /* Set flex direction to column for webkit browsers */
+    -ms-flex-direction: column; /* Set flex direction to column for older IE */
+    flex-direction: column; /* Set flex direction to column */
+    text-align: center; /* Center align the text */
+    min-width: 20%; /* Set minimum width to 20% */
+  }
+
+  /* Blog card styling */
+  .blog-card {
+    min-width: -webkit-calc(
+      33.33% - 20px
+    ); /* Set minimum width for blog cards for webkit browsers */
+    min-width: calc(33.33% - 20px); /* Set minimum width for blog cards */
+  }
+
+  /* Blog title font size */
+  .blog-title {
+    --fs-5: 1rem; /* Set font size for blog titles */
+  }
+
+  /* Footer navigation list styling */
+  .footer-nav-list {
+    min-width: -webkit-calc(
+      20% - 16px
+    ); /* Set minimum width for footer nav lists for webkit browsers */
+    min-width: calc(20% - 16px); /* Set minimum width for footer nav lists */
+    width: -webkit-calc(
+      20% - 16px
+    ); /* Set width for footer nav lists for webkit browsers */
+    width: calc(20% - 16px); /* Set width for footer nav lists */
+  }
+
+  /* Hide the last footer nav list */
+  .footer-nav-list:last-child {
+    display: none; /* Hide the last item in the footer navigation list */
+  }
+
+  /* Footer bottom styling */
+  .footer-bottom {
+    margin-bottom: 0; /* Remove bottom margin */
+  }
+}
+
+/**
+ * responsive larger than 1200px screen
+ */
+
+@media (min-width: 1200px) {
+  /* ----------REUSED---------- */
+
+  .container {
+    max-width: 1200px; /* Set the maximum width of the container to 1200px for screens larger than 1200px */
+  }
+
+  /* ----------HEADER SECTION---------- */
+
+  .desktop-menu-category-list {
+    gap: 45px; /* Set a gap of 45px between items in the desktop menu category list */
+  }
+
+  /* ----------BANNER---------- */
+
+  .slider-item:last-child .banner-img {
+    -o-object-position: top; /* Set the object position to top for Opera browsers */
+    object-position: top; /* Set the object position to top for other browsers */
+  }
+
+  /* ----------CATEGORY---------- */
+
+  .category-item {
+    min-width: -webkit-calc(
+      25% - 22.5px
+    ); /* Set the minimum width of category items to 25% minus 22.5px for webkit browsers */
+    min-width: calc(
+      25% - 22.5px
+    ); /* Set the minimum width of category items to 25% minus 22.5px */
+  }
+
+  .category-item-title {
+    --fs-9: 0.824rem; /* Set the font size of category item titles to 0.824rem */
+  }
+
+  /* ----------PRODUCT---------- */
+
+  .product-featured .showcase > div {
+    min-width: -webkit-calc(
+      50% - 10px
+    ); /* Set the minimum width of product showcase items to 50% minus 10px for webkit browsers */
+    min-width: calc(
+      50% - 10px
+    ); /* Set the minimum width of product showcase items to 50% minus 10px */
+  }
+
+  .product-featured .display-number {
+    --fs-5: 1.125rem; /* Set the font size of the product display number to 1.125rem */
+  }
+
+  .product-grid {
+    /* -ms-grid-columns: (1fr) [4]; */
+    grid-template-columns: repeat(
+      4,
+      1fr
+    ); /* Create a 4-column grid for product items */
+  }
+
+  /* ----------TESTIMONIALS, CTA, SERVICE---------- */
+
+  .testimonial,
+  .service {
+    min-width: -webkit-calc(
+      25% - 20px
+    ); /* Set the minimum width of testimonial and service items to 25% minus 20px for webkit browsers */
+    min-width: calc(
+      25% - 20px
+    ); /* Set the minimum width of testimonial and service items to 25% minus 20px */
+    width: -webkit-calc(
+      25% - 20px
+    ); /* Set the width of testimonial and service items to 25% minus 20px for webkit browsers */
+    width: calc(
+      25% - 20px
+    ); /* Set the width of testimonial and service items to 25% minus 20px */
+  }
+
+  .cta-container {
+    min-width: -webkit-calc(
+      50% - 20px
+    ); /* Set the minimum width of CTA containers to 50% minus 20px for webkit browsers */
+    min-width: calc(
+      50% - 20px
+    ); /* Set the minimum width of CTA containers to 50% minus 20px */
+    width: -webkit-calc(
+      50% - 20px
+    ); /* Set the width of CTA containers to 50% minus 20px for webkit browsers */
+    width: calc(
+      50% - 20px
+    ); /* Set the width of CTA containers to 50% minus 20px */
+    aspect-ratio: unset; /* Remove the aspect ratio from CTA containers */
+  }
+
+  .service-container {
+    -webkit-box-pack: start; /* Align service items to the start for webkit browsers */
+    -webkit-justify-content: flex-start; /* Align service items to the start for webkit browsers */
+    -ms-flex-pack: start; /* Align service items to the start for Internet Explorer */
+    justify-content: flex-start; /* Align service items to the start */
+    gap: 16px; /* Set a gap of 16px between service items */
+    padding: 30px; /* Add padding of 30px to the service container */
+  }
+
+  .service-item {
+    -webkit-box-orient: horizontal; /* Set the orientation of service items to horizontal for webkit browsers */
+    -webkit-box-direction: normal; /* Set the direction of service items to normal for webkit browsers */
+    -webkit-flex-direction: row; /* Set the flex direction of service items to row for webkit browsers */
+    -ms-flex-direction: row; /* Set the flex direction of service items to row for Internet Explorer */
+    flex-direction: row; /* Set the flex direction of service items to row */
+    text-align: left; /* Align text to the left inside service items */
+  }
+
+  /* ----------BLOG---------- */
+
+  .blog {
+    margin-bottom: 50px; /* Set a bottom margin of 50px for the blog section */
+  }
+
+  .blog-card {
+    min-width: -webkit-calc(
+      25% - 22.5px
+    ); /* Set the minimum width of blog cards to 25% minus 22.5px for webkit browsers */
+    min-width: calc(
+      25% - 22.5px
+    ); /* Set the minimum width of blog cards to 25% minus 22.5px */
+  }
+
+  /* ----------FOOTER---------- */
+
+  footer {
+    padding-top: 50px; /* Add top padding of 50px to the footer */
+  }
+
+  .footer-category {
+    margin-bottom: 50px; /* Set a bottom margin of 50px for footer categories */
+    padding-bottom: 35px; /* Set bottom padding of 35px for footer categories */
+  }
+
+  .footer-nav {
+    padding-bottom: 50px; /* Set bottom padding of 50px for footer navigation */
+  }
+}
+
+@media (min-width: 1400px) {
+  /* Responsive screens larger than 1400px */
+
+  /* ----------BASE---------- */
+
+  html {
+    font-size: 18px; /* Set the base font size to 18px for larger screens */
+  }
+
+  /* ----------REUSED---------- */
+
+  .container {
+    max-width: 1350px; /* Set the maximum width of the container to 1350px for screens larger than 1400px */
+  }
+
+  /* ----------BANNER---------- */
+
+  .slider-item {
+    height: 450px; /* Set the height of banner slider items to 450px for larger screens */
+  }
+
+  .banner-content {
+    left: 110px; /* Set the left position of the banner content to 110px */
+    max-width: 460px; /* Set the maximum width of the banner content to 460px */
+  }
+}
